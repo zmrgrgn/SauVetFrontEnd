@@ -1,0 +1,19 @@
+export interface HayvanKayit{
+    id:string;
+    vatandasId:number;
+    belediyeId:number;
+    kafesNo:string;
+    cipNo:string;
+    kulakNo:string;
+    ad:string;
+    hayvanTur:string;
+    irk:string;
+    yas:string;
+    cinsiyet:string;
+    esgal:string;
+    gebeMi:string;
+    geldigiTarih:string;
+    geldigiAdres:string;
+    anamnez:string;
+    fotograf:string;
+}
