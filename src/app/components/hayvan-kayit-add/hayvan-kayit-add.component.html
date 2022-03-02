@@ -1,0 +1,118 @@
+<div class="content">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header"><h5 class="title">Hayvan Ekle</h5></div>
+            <div class="card-body">
+                <form [formGroup]="hayvanKayitAddForm">
+                    <div class="mb-3">
+                        <label for="id">id</label>
+                        <div class="form-group">
+                            <input type="text" id="id" formControlName="id" class="form-control" placeholder="id"/>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="vatandasId">vatandasId</label>
+                        <div class="form-group">
+                            <input type="text" id="vatandasId" formControlName="vatandasId" class="form-control" placeholder="vatandasId"/>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="belediyeId">belediyeId</label>
+                        <div class="form-group">
+                            <input type="text" id="belediyeId" formControlName="belediyeId" class="form-control" placeholder="belediyeId"/>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="kafesNo">kafesNo</label>
+                        <div class="form-group">
+                            <input type="text" id="kafesNo" formControlName="kafesNo" class="form-control" placeholder="kafesNo"/>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cipNo">cipNo</label>
+                        <div class="form-group">
+                            <input type="text" id="cipNo" formControlName="cipNo" class="form-control" placeholder="cipNo"/>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="kulakNo">kulakNo</label>
+                        <div class="form-group">
+                            <input type="text" id="kulakNo" formControlName="kulakNo" class="form-control" placeholder="kulakNo"/>
+                        </div>
+                    </div>
+                <div class="mb-3">
+                    <label for="ad">Hayvan Adı</label>
+                    <div class="form-group">
+                        <input type="text" id="ad" formControlName="ad" class="form-control" placeholder="Hayvan Adı"/>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="hayvanTur">Hayvan Türü</label>
+                    <div class="form-group">
+                        <input type="text" id="hayvanTur" formControlName="hayvanTur" class="form-control" placeholder="Hayvan Tür"/>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="irk">Hayvan Irkı</label>
+                    <div class="form-group">
+                        <input type="text" id="irk" formControlName="irk" class="form-control" placeholder="Hayvan Irkı"/>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="yas">Hayvan Yaşı</label>
+                    <div class="form-group">
+                        <input type="text" id="yas" formControlName="yas" class="form-control" placeholder="Hayvan Yaşı"/>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="cinsiyet">cinsiyet</label>
+                    <div class="form-group">
+                        <input type="text" id="cinsiyet" formControlName="cinsiyet" class="form-control" placeholder="cinsiyet"/>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="esgal">esgal</label>
+                    <div class="form-group">
+                        <input type="text" id="esgal" formControlName="esgal" class="form-control" placeholder="esgal"/>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="gebeMi">gebeMi</label>
+                    <div class="form-group">
+                        <input type="text" id="gebeMi" formControlName="gebeMi" class="form-control" placeholder="gebeMi"/>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="geldigiTarih">geldigiTarih</label>
+                    <div class="form-group">
+                        <input type="text" id="geldigiTarih" formControlName="geldigiTarih" class="form-control" placeholder="geldigiTarih"/>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="geldigiAdres">geldigiAdres</label>
+                    <div class="form-group">
+                        <input type="text" id="geldigiAdres" formControlName="geldigiAdres" class="form-control" placeholder="geldigiAdres"/>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="anamnez">anamnez</label>
+                    <div class="form-group">
+                        <input type="text" id="anamnez" formControlName="anamnez" class="form-control" placeholder="anamnez"/>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="fotograf">fotograf</label>
+                    <div class="form-group">
+                        <input type="text" id="fotograf" formControlName="fotograf" class="form-control" placeholder="fotograf"/>
+                    </div>
+                </div>
+                </form>
+            
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+            </div>
+        </div>
+    </div>
+    
+</div>

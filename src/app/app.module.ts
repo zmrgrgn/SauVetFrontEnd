@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,7 @@ import { VatAddedPipe } from './pipes/vat-added.pipe';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 import { ToastrModule } from 'ngx-toastr';
+import { HayvanKayitAddComponent } from './components/hayvan-kayit-add/hayvan-kayit-add.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { ToastrModule } from 'ngx-toastr';
     HayvanTedaviComponent,
     NaviComponent,
     VatAddedPipe,
-    FilterPipePipe
+    FilterPipePipe,
+    HayvanKayitAddComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,7 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"
     })

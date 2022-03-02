@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HayvanKayit } from '../models/hayvanKayit';
 import { ListResponseModel } from '../models/listResponseModel';
+import { ResponseModel } from '../models/responseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +18,8 @@ export class HayvanKayitService {
  getHayvanKayitsByHayvanTedavi(hayvanKayitId:number):Observable<ListResponseModel<HayvanKayit>>{
 let newPath=this.apiUrl+"hayvankayits/getbyid?hayvanKayitId="+hayvanKayitId
    return this.httpClient.get<ListResponseModel<HayvanKayit>>(newPath);
+  }
+  add(hayvanKayit:HayvanKayit):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"hayvanKayits/add",hayvanKayit)
   }
 }
