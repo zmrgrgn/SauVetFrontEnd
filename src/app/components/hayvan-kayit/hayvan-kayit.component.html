@@ -1,6 +1,14 @@
 <div *ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
+  <div class="mb-3">
+    <label for="filterText" class="form-label">Hayvan ara</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="arama ifadesi giriniz">
+  </div>
+  <div *ngIf="filterText" class="alert alert-warning">
+{{filterText}} aradınız
+  </div>
+
 <table *ngIf="dataLoaded==true" class="table">
     <thead>
         <tr>
@@ -55,60 +63,68 @@
             <th>
                 fotograf
             </th>
+            <th>
+
+            </th>
         </tr>
     </thead>
-    <tr *ngFor="let hayvanKayit of hayvanKayits">
-        <td>
-            {{hayvanKayit.id}}
-        </td>
-        <td>
-            {{hayvanKayit.vatandasId}}
-        </td>
-        <td>
-            {{hayvanKayit.belediyeId}}
-        </td>
-        <td>
-            {{hayvanKayit.kafesNo}}
-        </td>
-        <td>
-            {{hayvanKayit.cipNo}}
-        </td>
-        <td>
-            {{hayvanKayit.kulakNo}}
-        </td>
-        <td>
-            {{hayvanKayit.ad}}
-        </td>
-        <td>
-            {{hayvanKayit.hayvanTur}}
-        </td>
-        <td>
-            {{hayvanKayit.irk}}
-        </td>
-        <td>
-            {{hayvanKayit.yas}}
-        </td>
-        <td>
-            {{hayvanKayit.cinsiyet}}
-        </td>
-        <td>
-            {{hayvanKayit.esgal}}
-        </td>
-        <td>
-            {{hayvanKayit.gebeMi}}
-        </td>
-        <td>
-            {{hayvanKayit.geldigiTarih}}
-        </td>
-        <td>
-            {{hayvanKayit.geldigiAdres}}
-        </td>
-        <td>
-            {{hayvanKayit.anamnez}}
-        </td>
-        <td>
-            {{hayvanKayit.fotograf}}
-        </td>
-      
-    </tr>
+    <tbody>
+        <tr *ngFor="let hayvanKayit of hayvanKayits | filterPipe:filterText">
+            <td>
+                {{hayvanKayit.id}}
+            </td>
+            <td>
+                {{hayvanKayit.vatandasId}}
+            </td>
+            <td>
+                {{hayvanKayit.belediyeId}}
+            </td>
+            <td>
+                {{hayvanKayit.kafesNo}}
+            </td>
+            <td>
+                {{hayvanKayit.cipNo}}
+            </td>
+            <td>
+                {{hayvanKayit.kulakNo}}
+            </td>
+            <td>
+                {{hayvanKayit.ad|uppercase}}
+            </td>
+            <td>
+                {{hayvanKayit.hayvanTur}}
+            </td>
+            <td>
+                {{hayvanKayit.irk}}
+            </td>
+            <td>
+                {{hayvanKayit.yas}}
+            </td>
+            <td>
+                {{hayvanKayit.cinsiyet}}
+            </td>
+            <td>
+                {{hayvanKayit.esgal}}
+            </td>
+            <td>
+                {{hayvanKayit.gebeMi}}
+            </td>
+            <td>
+                {{hayvanKayit.geldigiTarih}}
+            </td>
+            <td>
+                {{hayvanKayit.geldigiAdres}}
+            </td>
+            <td>
+                {{hayvanKayit.anamnez}}
+            </td>
+            <td>
+                {{hayvanKayit.fotograf}}
+            </td>
+          <td>
+              <button  type="button" class="btn btn-success">Ekle</button>
+          </td>
+        </tr>
+    </tbody>
+   
 </table>
