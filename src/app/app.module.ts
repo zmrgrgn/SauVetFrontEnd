@@ -16,6 +16,17 @@ import { ToastrModule } from 'ngx-toastr';
 import { HayvanKayitAddComponent } from './components/hayvan-kayit-add/hayvan-kayit-add.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { MamaComponent } from './components/mama/mama.component';
+import { HekimComponent } from './components/hekim/hekim.component';
+import { VatandasBilgiComponent } from './components/vatandas-bilgi/vatandas-bilgi.component';
+import { HayvanSahiplendirmeComponent } from './components/hayvan-sahiplendirme/hayvan-sahiplendirme.component';
+import { BelediyeBilgiComponent } from './components/belediye-bilgi/belediye-bilgi.component';
+import { BelediyeBilgiAddComponent } from './components/belediye-bilgi-add/belediye-bilgi-add.component';
+import { HayvanSahiplendirmeAddComponent } from './components/hayvan-sahiplendirme-add/hayvan-sahiplendirme-add.component';
+import { HekimAddComponent } from './components/hekim-add/hekim-add.component';
+import { MamaAddComponent } from './components/mama-add/mama-add.component';
+import { VatandasBilgiAddComponent } from './components/vatandas-bilgi-add/vatandas-bilgi-add.component';
+import { HayvanTedaviAddComponent } from './components/hayvan-tedavi-add/hayvan-tedavi-add.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +36,18 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     VatAddedPipe,
     FilterPipePipe,
     HayvanKayitAddComponent,
-    LoginComponent
+    LoginComponent,
+    MamaComponent,
+    HekimComponent,
+    VatandasBilgiComponent,
+    HayvanSahiplendirmeComponent,
+    BelediyeBilgiComponent,
+    BelediyeBilgiAddComponent,
+    HayvanSahiplendirmeAddComponent,
+    HekimAddComponent,
+    MamaAddComponent,
+    VatandasBilgiAddComponent,
+    HayvanTedaviAddComponent
   ],
   imports: [
     BrowserModule,
