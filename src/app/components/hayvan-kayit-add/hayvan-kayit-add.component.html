@@ -1,118 +1,135 @@
-<div class="content">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-header"><h5 class="title">Hayvan Ekle</h5></div>
-            <div class="card-body">
-                <form [formGroup]="hayvanKayitAddForm">
-                    <div class="mb-3">
-                        <label for="id">id</label>
-                        <div class="form-group">
-                            <input type="text" id="id" formControlName="id" class="form-control" placeholder="id"/>
-                        </div>
+<div class="layout-wrapper layout-content-navbar">
+  <div class="layout-container">
+    <div class="layout-page">
+      <div class="content-wrapper">
+        <div class="container-xxl flex-grow-1 container-p-y">
+          <h4 class="fw-bold py-3 mb-4">Hasta Kayıt</h4>
+          <div class="row">
+            <div class="col-xl-12">
+              <div class="card mb-8">
+                <div class="card-body">
+                  <form [formGroup]="hayvanKayitAddForm">
+                    <div class="mb-3 row">
+                      <label for="id" class="col-md-2 col-form-label">Id</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="id" formControlName="id" />
+                      </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="vatandasId">vatandasId</label>
-                        <div class="form-group">
-                            <input type="text" id="vatandasId" formControlName="vatandasId" class="form-control" placeholder="vatandasId"/>
-                        </div>
+                    <div class="mb-3 row">
+                      <label for="vatandasId" class="col-md-2 col-form-label">Vatandas Id</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="vatandasId"
+                          formControlName="vatandasId" />
+                      </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="belediyeId">belediyeId</label>
-                        <div class="form-group">
-                            <input type="text" id="belediyeId" formControlName="belediyeId" class="form-control" placeholder="belediyeId"/>
-                        </div>
+                    <div class="mb-3 row">
+                      <label for="belediyeId" class="col-md-2 col-form-label">Belediye Id</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="belediyeId"
+                          formControlName="belediyeId" />
+                      </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="kafesNo">kafesNo</label>
-                        <div class="form-group">
-                            <input type="text" id="kafesNo" formControlName="kafesNo" class="form-control" placeholder="kafesNo"/>
-                        </div>
+                    <div class="mb-3 row">
+                      <label for="kafesNo" class="col-md-2 col-form-label">Kafes Numarası</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="kafesNo" formControlName="kafesNo" />
+                      </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="cipNo">cipNo</label>
-                        <div class="form-group">
-                            <input type="text" id="cipNo" formControlName="cipNo" class="form-control" placeholder="cipNo"/>
-                        </div>
+                    <div class="mb-3 row">
+                      <label for="cipNo" class="col-md-2 col-form-label">Çip Numarası</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="cipNo" formControlName="cipNo" />
+                      </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="kulakNo">kulakNo</label>
-                        <div class="form-group">
-                            <input type="text" id="kulakNo" formControlName="kulakNo" class="form-control" placeholder="kulakNo"/>
-                        </div>
+                    <div class="mb-3 row">
+                      <label for="kulakNo" class="col-md-2 col-form-label">Kulak Numarası</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="kulakNo" formControlName="kulakNo" />
+                      </div>
                     </div>
-                <div class="mb-3">
-                    <label for="ad">Hayvan Adı</label>
-                    <div class="form-group">
-                        <input type="text" id="ad" formControlName="ad" class="form-control" placeholder="Hayvan Adı"/>
+                    <div class="mb-3 row">
+                      <label for="ad" class="col-md-2 col-form-label">Hayvan Adı</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="ad" formControlName="ad" />
+                      </div>
                     </div>
+                    <div class="mb-3 row">
+                      <label for="hayvanTur" class="col-md-2 col-form-label">Hayvan Türü</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="hayvanTur"
+                          formControlName="hayvanTur" />
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="irk" class="col-md-2 col-form-label">Hayvan Irkı</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="irk" formControlName="irk" />
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="yas" class="col-md-2 col-form-label">Hayvan Yaşı</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="yas" formControlName="yas" />
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="cinsiyet" class="col-md-2 col-form-label">Cinsiyet</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="cinsiyet"
+                          formControlName="cinsiyet" />
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="esgal" class="col-md-2 col-form-label">Eşgal</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="esgal" formControlName="esgal" />
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="gebeMi" class="col-md-2 col-form-label">Gebelik Durumu</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="gebeMi" formControlName="gebeMi" />
+                      </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                      <label for="geldigiTarih" class="col-md-2 col-form-label">Geldiği Tarih</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="date" value="2021-06-18" id="geldigiTarih"
+                          formControlName="geldigiTarih" />
+                      </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                      <label for="geldigiAdres" class="col-md-2 col-form-label">Geldiği Adres</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="geldigiAdres"
+                          formControlName="geldigiAdres" />
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="anamnez" class="col-md-2 col-form-label">Anamnez</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="anamnez" formControlName="anamnez" />
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="fotograf" class="col-md-2 col-form-label">Fotoğraf</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="search" value="Search ..." id="fotograf"
+                          formControlName="fotograf" />
+                      </div>
+                    </div>
+                  </form>
+                  <div class="card-footer">
+                    <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+                  </div>
                 </div>
-                <div class="mb-3">
-                    <label for="hayvanTur">Hayvan Türü</label>
-                    <div class="form-group">
-                        <input type="text" id="hayvanTur" formControlName="hayvanTur" class="form-control" placeholder="Hayvan Tür"/>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="irk">Hayvan Irkı</label>
-                    <div class="form-group">
-                        <input type="text" id="irk" formControlName="irk" class="form-control" placeholder="Hayvan Irkı"/>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="yas">Hayvan Yaşı</label>
-                    <div class="form-group">
-                        <input type="text" id="yas" formControlName="yas" class="form-control" placeholder="Hayvan Yaşı"/>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="cinsiyet">cinsiyet</label>
-                    <div class="form-group">
-                        <input type="text" id="cinsiyet" formControlName="cinsiyet" class="form-control" placeholder="cinsiyet"/>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="esgal">esgal</label>
-                    <div class="form-group">
-                        <input type="text" id="esgal" formControlName="esgal" class="form-control" placeholder="esgal"/>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="gebeMi">gebeMi</label>
-                    <div class="form-group">
-                        <input type="text" id="gebeMi" formControlName="gebeMi" class="form-control" placeholder="gebeMi"/>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="geldigiTarih">geldigiTarih</label>
-                    <div class="form-group">
-                        <input type="text" id="geldigiTarih" formControlName="geldigiTarih" class="form-control" placeholder="geldigiTarih"/>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="geldigiAdres">geldigiAdres</label>
-                    <div class="form-group">
-                        <input type="text" id="geldigiAdres" formControlName="geldigiAdres" class="form-control" placeholder="geldigiAdres"/>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="anamnez">anamnez</label>
-                    <div class="form-group">
-                        <input type="text" id="anamnez" formControlName="anamnez" class="form-control" placeholder="anamnez"/>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="fotograf">fotograf</label>
-                    <div class="form-group">
-                        <input type="text" id="fotograf" formControlName="fotograf" class="form-control" placeholder="fotograf"/>
-                    </div>
-                </div>
-                </form>
-            
+              </div>
             </div>
-            <div class="card-footer">
-                <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-    
+  </div>
 </div>

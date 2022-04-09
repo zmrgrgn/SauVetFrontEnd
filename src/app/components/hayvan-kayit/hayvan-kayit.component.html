@@ -1,130 +1,61 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <div class="mb-3">
-    <label for="filterText" class="form-label">Hayvan ara</label>
-    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="arama ifadesi giriniz">
-  </div>
-  <div *ngIf="filterText" class="alert alert-warning">
-{{filterText}} aradınız
-  </div>
-
-<table *ngIf="dataLoaded==true" class="table">
-    <thead>
-        <tr>
-            <th>
-                ID
-            </th>
-            <th>
-                vatandasId
-            </th>
-            <th>
-                belediyeId
-            </th>
-            <th>
-                kafesNo
-            </th>
-            <th>
-                cipNo
-            </th>
-            <th>
-                kulakNo
-            </th>
-            <th>
-                ad
-            </th>
-            <th>
-                hayvanTur
-            </th>
-            <th>
-                irk
-            </th>
-            <th>
-                yas
-            </th>
-            <th>
-                cinsiyet
-            </th>
-            <th>
-                esgal
-            </th>
-            <th>
-                gebeMi
-            </th>
-            <th>
-                geldigiTarih
-            </th>
-            <th>
-                geldigiAdres
-            </th>
-            <th>
-                anamnez
-            </th>
-            <th>
-                fotograf
-            </th>
-            <th>
-
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let hayvanKayit of hayvanKayits | filterPipe:filterText">
-            <td>
-                {{hayvanKayit.id}}
-            </td>
-            <td>
-                {{hayvanKayit.vatandasId}}
-            </td>
-            <td>
-                {{hayvanKayit.belediyeId}}
-            </td>
-            <td>
-                {{hayvanKayit.kafesNo}}
-            </td>
-            <td>
-                {{hayvanKayit.cipNo}}
-            </td>
-            <td>
-                {{hayvanKayit.kulakNo}}
-            </td>
-            <td>
-                {{hayvanKayit.ad|uppercase}}
-            </td>
-            <td>
-                {{hayvanKayit.hayvanTur}}
-            </td>
-            <td>
-                {{hayvanKayit.irk}}
-            </td>
-            <td>
-                {{hayvanKayit.yas}}
-            </td>
-            <td>
-                {{hayvanKayit.cinsiyet}}
-            </td>
-            <td>
-                {{hayvanKayit.esgal}}
-            </td>
-            <td>
-                {{hayvanKayit.gebeMi}}
-            </td>
-            <td>
-                {{hayvanKayit.geldigiTarih}}
-            </td>
-            <td>
-                {{hayvanKayit.geldigiAdres}}
-            </td>
-            <td>
-                {{hayvanKayit.anamnez}}
-            </td>
-            <td>
-                {{hayvanKayit.fotograf}}
-            </td>
-          <td>
-              <button  type="button" class="btn btn-success">Ekle</button>
-          </td>
-        </tr>
-    </tbody>
-   
-</table>
+<div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+        <div class="layout-page">
+            <div class="content-wrapper">
+                <div class="container-xxl flex-grow-1 container-p-y">
+                    <div *ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="filterText" class="form-label">Hayvan ara</label>
+                        <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText"
+                            placeholder="arama ifadesi giriniz">
+                    </div>
+                    <div *ngIf="filterText" class="alert alert-warning">
+                        {{filterText}} aradınız
+                    </div>
+                    <h4 class="fw-bold py-3 mb-4"> Tüm Hastalar
+                    </h4>
+                    <div class="card">
+                        <div class="table-responsive text-nowrap">
+                            <table *ngIf="dataLoaded==true" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Vatandaş Id</th>
+                                        <th>Belediye Id</th>
+                                        <th>Kulak Numarası</th>
+                                        <th>Ad</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-border-bottom-0">
+                                    <tr *ngFor="let hayvanKayit of hayvanKayits | filterPipe:filterText">
+                                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> {{hayvanKayit.id}}
+                                        </td>
+                                        <td>{{hayvanKayit.vatandasId}}</td>
+                                        <td>
+                                            {{hayvanKayit.belediyeId}}
+                                        </td>
+                                        <td>{{hayvanKayit.kulakNo}}</td>
+                                        <td>{{hayvanKayit.ad|uppercase}}</td>
+                                        <td>
+                                            <div class="menu-nav">
+                                                <div class="dropdown-container" tabindex="-1">
+                                                  <div class="three-dots"></div>
+                                                  <div class="dropdown">
+                                                    <a href="#"><div>Düzenle</div></a>
+                                                    <a href="#"><div>Sil</div></a>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
