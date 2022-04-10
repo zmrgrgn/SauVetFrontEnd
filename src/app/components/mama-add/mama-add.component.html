@@ -1,1 +1,60 @@
-<p>mama-add works!</p>
+<div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+        <div class="layout-page">
+            <div class="content-wrapper">
+                <div class="container-xxl flex-grow-1 container-p-y">
+                    <h4 class="fw-bold py-3 mb-4">Mama Ekleme</h4>
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card mb-8">
+                                <div class="card-body">
+                                    <form [formGroup]="mamaAddForm">
+                                        <div class="mb-3 row">
+                                            <label for="tarih" class="col-md-2 col-form-label">Getirildiği Tarih</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="date" value="2021-06-18" id="tarih"
+                                                    formControlName="tarih" />
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
+                                            <label for="ad" class="col-md-2 col-form-label">Adı</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="text" value="Sneat" id="ad"
+                                                    formControlName="ad" />
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="malzemeTur" class="col-md-2 col-form-label">Malzeme Türü</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="text" value="Sneat" id="malzemeTur"
+                                                    formControlName="malzemeTur" />
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="miktar" class="col-md-2 col-form-label">Miktar</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="text" value="Sneat" id="miktar"
+                                                    formControlName="miktar" />
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="birim" class="col-md-2 col-form-label">Birim</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="text" value="Sneat" id="birim"
+                                                    formControlName="birim" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="card-footer">
+                                        <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

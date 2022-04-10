@@ -11,14 +11,14 @@ import { HayvanKayitService } from 'src/app/services/hayvan-kayit.service';
 @Component({
   selector: 'app-hayvan-kayit-add',
   templateUrl: './hayvan-kayit-add.component.html',
-  styleUrls: ['./hayvan-kayit-add.component.css']
+  styleUrls: ['./hayvan-kayit-add.component.css'],
 })
 export class HayvanKayitAddComponent implements OnInit {
   hayvanKayitAddForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
-    private hayvanKayitService: HayvanKayitService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private hayvanKayitService: HayvanKayitService
   ) {}
 
   ngOnInit(): void {

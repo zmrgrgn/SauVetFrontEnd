@@ -6,16 +6,19 @@ import { ListResponseModel } from '../models/listResponseModel';
 import { ResponseModel } from '../models/responseModel';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HayvanTedaviService {
-  apiUrl="https://localhost:5001/api/"
-  constructor(private httpClient:HttpClient) { }
-  getHayvanTedavis():Observable<ListResponseModel<HayvanTedavi>>{
-    let newPath=this.apiUrl+"hayvanTedavis/getall"
-    return this.httpClient.get<ListResponseModel<HayvanTedavi>>(this.apiUrl);
+  apiUrl = 'https://localhost:5001/api/';
+  constructor(private httpClient: HttpClient) {}
+  getHayvanTedavis(): Observable<ListResponseModel<HayvanTedavi>> {
+    let newPath = this.apiUrl + 'hayvanTedavis/getall';
+    return this.httpClient.get<ListResponseModel<HayvanTedavi>>(newPath);
   }
-  add(hayvanTedavi:HayvanTedavi):Observable<ResponseModel>{
-    return this.httpClient.post<ResponseModel>(this.apiUrl+"hayvanTedavis/add",hayvanTedavi)
+  add(hayvanTedavi: HayvanTedavi): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(
+      this.apiUrl + 'hayvanTedavis/add',
+      hayvanTedavi
+    );
   }
 }

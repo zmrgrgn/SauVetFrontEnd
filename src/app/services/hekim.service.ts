@@ -6,16 +6,19 @@ import { ListResponseModel } from '../models/listResponseModel';
 import { ResponseModel } from '../models/responseModel';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HekimService {
-  apiUrl="https://localhost:5001/api/"
-  constructor(private httpClient:HttpClient) { }
-  getHekims():Observable<ListResponseModel<Hekim>>{
-    let newPath=this.apiUrl+"hekims/getall"
+  apiUrl = 'https://localhost:5001/api/';
+  constructor(private httpClient: HttpClient) {}
+  getHekims(): Observable<ListResponseModel<Hekim>> {
+    let newPath = this.apiUrl + 'hekims/getall';
     return this.httpClient.get<ListResponseModel<Hekim>>(newPath);
   }
-  add(hekim:Hekim):Observable<ResponseModel>{
-    return this.httpClient.post<ResponseModel>(this.apiUrl+"hekims/add",hekim)
+  add(hekim: Hekim): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(
+      this.apiUrl + 'hekims/add',
+      hekim
+    );
   }
 }

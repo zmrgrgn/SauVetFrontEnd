@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -47,7 +47,7 @@ import { HayvanTedaviAddComponent } from './components/hayvan-tedavi-add/hayvan-
     HekimAddComponent,
     MamaAddComponent,
     VatandasBilgiAddComponent,
-    HayvanTedaviAddComponent
+    HayvanTedaviAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,12 +57,12 @@ import { HayvanTedaviAddComponent } from './components/hayvan-tedavi-add/hayvan-
     BrowserAnimationsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({
-      positionClass:"toast-bottom-right"
-    })
+      positionClass: 'toast-bottom-right',
+    }),
   ],
   providers: [
-    {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

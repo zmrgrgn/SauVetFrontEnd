@@ -11,7 +11,10 @@ export class AuthService {
   apiUrl = 'https://localhost:5001/api/auth/';
   constructor(private httpClient: HttpClient) {}
   login(loginModel: LoginModel) {
-    return this.httpClient.post<SingleResponseModel<TokenModel>>(this.apiUrl + 'login', loginModel);
+    return this.httpClient.post<SingleResponseModel<TokenModel>>(
+      this.apiUrl + 'login',
+      loginModel
+    );
   }
   isAuthenticated() {
     if (localStorage.getItem('token')) {

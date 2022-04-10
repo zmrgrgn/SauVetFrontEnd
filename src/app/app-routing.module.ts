@@ -18,33 +18,81 @@ import { VatandasBilgiComponent } from './components/vatandas-bilgi/vatandas-bil
 import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
-  {path:"",pathMatch:"full",component:LoginComponent},
-  {path:"hayvanKayits/getall",component:HayvanKayitComponent, canActivate:[LoginGuard]},
-  {path:"hayvanKayits/add", component:HayvanKayitAddComponent, canActivate:[LoginGuard]},
+  { path: '', pathMatch: 'full', component: LoginComponent },
+  {
+    path: 'hayvanKayits/getall',
+    component: HayvanKayitComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'hayvanKayits/add',
+    component: HayvanKayitAddComponent,
+    canActivate: [LoginGuard],
+  },
 
-  {path:"hayvanTedavis/getall",component:HayvanTedaviComponent,canActivate:[LoginGuard]},
-  {path:"hayvanTedavis/add",component:HayvanTedaviAddComponent,canActivate:[LoginGuard]},
+  {
+    path: 'hayvanTedavis/getall',
+    component: HayvanTedaviComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'hayvanTedavis/add',
+    component: HayvanTedaviAddComponent,
+    canActivate: [LoginGuard],
+  },
 
-  {path:"belediyeBilgis/getall", component:BelediyeBilgiComponent, canActivate:[LoginGuard]},
-  {path:"belediyeBilgis/add", component:BelediyeBilgiAddComponent, canActivate:[LoginGuard]},
+  {
+    path: 'belediyeBilgis/getall',
+    component: BelediyeBilgiComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'belediyeBilgis/add',
+    component: BelediyeBilgiAddComponent,
+    canActivate: [LoginGuard],
+  },
 
-  {path:"hekims/getall", component:HekimComponent, canActivate:[LoginGuard]},
-  {path:"hekims/add", component:HekimAddComponent, canActivate:[LoginGuard]},
+  {
+    path: 'hekims/getall',
+    component: HekimComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'hekims/add',
+    component: HekimAddComponent,
+    canActivate: [LoginGuard],
+  },
 
-  {path:"vatandasBilgis/getall", component:VatandasBilgiComponent, canActivate:[LoginGuard]},
-  {path:"vatandasBilgis/add", component:VatandasBilgiAddComponent, canActivate:[LoginGuard]},
+  {
+    path: 'vatandasBilgis/getall',
+    component: VatandasBilgiComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'vatandasBilgis/add',
+    component: VatandasBilgiAddComponent,
+    canActivate: [LoginGuard],
+  },
 
-  {path:"hayvanSahiplendirmes/getall", component:HayvanSahiplendirmeComponent, canActivate:[LoginGuard]},
-  {path:"hayvanSahiplendirmes/add", component:HayvanSahiplendirmeAddComponent, canActivate:[LoginGuard]},
+  {
+    path: 'hayvanSahiplendirmes/getall',
+    component: HayvanSahiplendirmeComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'hayvanSahiplendirmes/add',
+    component: HayvanSahiplendirmeAddComponent,
+    canActivate: [LoginGuard],
+  },
 
-  {path:"mamas/getall", component:MamaComponent, canActivate:[LoginGuard]},
-  {path:"mamas/add", component:MamaAddComponent, canActivate:[LoginGuard]},
-  
-  {path:"login", component:LoginComponent}
+  { path: 'mamas/getall', component: MamaComponent, canActivate: [LoginGuard] },
+  { path: 'mamas/add', component: MamaAddComponent, canActivate: [LoginGuard] },
+
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,1 +1,84 @@
-<p>hayvan-tedavi-add works!</p>
+<div class="layout-wrapper layout-content-navbar">
+  <div class="layout-container">
+    <div class="layout-page">
+      <div class="content-wrapper">
+        <div class="container-xxl flex-grow-1 container-p-y">
+          <h4 class="fw-bold py-3 mb-4">Tedavi Ekleme</h4>
+          <div class="row">
+            <div class="col-xl-12">
+              <div class="card mb-8">
+                <div class="card-body">
+                  <form [formGroup]="hayvanTedaviAddForm">
+                    <div class="mb-3 row">
+                      <label for="hayvanId" class="col-md-2 col-form-label">Hayvan Id</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="hayvanId"
+                          formControlName="hayvanId" />
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="hekimId" class="col-md-2 col-form-label">Hekim Id</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="hekimId" formControlName="hekimId" />
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="tedaviBaslik" class="col-md-2 col-form-label">Tedavi Başlığı</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="tedaviBaslik"
+                          formControlName="tedaviBaslik" />
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="tedaviDetay" class="col-md-2 col-form-label">Tedavi Detayı</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="tedaviDetay"
+                          formControlName="tedaviDetay" />
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="tedaviTarih" class="col-md-2 col-form-label">Tarih</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="date" value="2021-06-18" id="tedaviTarih"
+                          formControlName="tedaviTarih" />
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="bulgular" class="col-md-2 col-form-label">Bulgular</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="bulgular"
+                          formControlName="bulgular" />
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="notlar" class="col-md-2 col-form-label">Notlar</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="notlar" formControlName="notlar" />
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="olduMu" class="col-md-2 col-form-label">Öldü Mü</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="olduMu" formControlName="olduMu" />
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="olumNedeni" class="col-md-2 col-form-label">Ölüm Nedeni</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" value="Sneat" id="olumNedeni"
+                          formControlName="olumNedeni" />
+                      </div>
+                    </div>
+                  </form>
+                  <div class="card-footer">
+                    <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
