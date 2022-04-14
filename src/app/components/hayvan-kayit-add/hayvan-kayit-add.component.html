@@ -18,15 +18,24 @@
                     <div class="mb-3 row">
                       <label for="vatandasId" class="col-md-2 col-form-label">Vatandas Id</label>
                       <div class="col-md-10">
-                        <input class="form-control" type="text" value="Sneat" id="vatandasId"
-                          formControlName="vatandasId" />
+                        <select [(ngModel)]="vatandasBilgiFilter" class="form-select" aria-label="Default select example" id="vatandasId" formControlName="vatandasId">
+                          <option value=0>Kişi Seçiniz</option>
+                          <option *ngFor="let vatandasBilgi of vatandasBilgis" [value]="vatandasBilgi.id" [selected]="getSelectedVatandasBilgi(vatandasBilgi.id)" 
+                          >{{vatandasBilgi.ad}}</option>
+                        </select>
                       </div>
                     </div>
                     <div class="mb-3 row">
                       <label for="belediyeId" class="col-md-2 col-form-label">Belediye Id</label>
                       <div class="col-md-10">
-                        <input class="form-control" type="text" value="Sneat" id="belediyeId"
-                          formControlName="belediyeId" />
+                        <div class="col-md-10">
+                          <input class="form-control" type="text" value="Sneat" id="belediyeId" formControlName="belediyeId" />
+                        </div>
+                        <select [(ngModel)]="belediyeBilgiFilter" class="form-select" aria-label="Default select example" id="belediyeId" formControlName="belediyeId">
+                          <option value=0>Belediye Seçiniz</option>
+                          <option *ngFor="let belediyeBilgi of belediyeBilgis" [value]="belediyeBilgi.id" [selected]="getSelectedVatandasBilgi(belediyeBilgi.id)" 
+                          >{{belediyeBilgi.belediyeAd}}</option>
+                        </select>
                       </div>
                     </div>
                     <div class="mb-3 row">
@@ -75,9 +84,11 @@
                     <div class="mb-3 row">
                       <label for="cinsiyet" class="col-md-2 col-form-label">Cinsiyet</label>
                       <div class="col-md-10">
-                        <input class="form-control" type="text" value="Sneat" id="cinsiyet"
-                          formControlName="cinsiyet" />
-                      </div>
+                      <select class="form-select" aria-label="Default select example" id="cinsiyet" formControlName="cinsiyet">
+                        <option value="erkek">Erkek</option>
+                        <option value="dişi">Dişi</option>
+                      </select>
+                    </div>
                     </div>
                     <div class="mb-3 row">
                       <label for="esgal" class="col-md-2 col-form-label">Eşgal</label>
@@ -88,10 +99,12 @@
                     <div class="mb-3 row">
                       <label for="gebeMi" class="col-md-2 col-form-label">Gebelik Durumu</label>
                       <div class="col-md-10">
-                        <input class="form-control" type="text" value="Sneat" id="gebeMi" formControlName="gebeMi" />
+                        <select class="form-select" aria-label="Default select example" id="gebeMi" formControlName="gebeMi">
+                          <option value="evet">Evet</option>
+                          <option value="hayir">Hayır</option>
+                        </select>
                       </div>
                     </div>
-
                     <div class="mb-3 row">
                       <label for="geldigiTarih" class="col-md-2 col-form-label">Geldiği Tarih</label>
                       <div class="col-md-10">

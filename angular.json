@@ -27,19 +27,20 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./src/styles.css",
+              "./node_modules/ngx-toastr/toastr.css",
               "./src/assets/assets/vendor/css/core.css",
-              "./src/assets/assets/vendor/css/theme-default.css",
               "./src/assets/assets/css/demo.css",
               "./src/assets/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css",
               "./src/assets/assets/vendor/css/pages/page-auth.css",
               "./src/assets/assets/vendor/libs/apex-charts/apex-charts.css",
-              "./src/assets/assets/vendor/fonts/boxicons.css"
+              "./src/assets/assets/vendor/fonts/boxicons.css",
+              "./src/assets/assets/vendor/css/theme-default.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
-              "./node_modules/ngx-toastr/toastr.css",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js",
               "./src/assets/assets/vendor/js/helpers.js",
               "./src/assets/assets/js/config.js",
@@ -52,7 +53,10 @@
               "./src/assets/assets/js/form-basic-inputs.js",
               "./src/assets/assets/vendor/libs/apex-charts/apexcharts.js",
               "./src/assets/assets/js/dashboards-analytics.js",
-              "./src/assets/assets/js/form-basic-inputs.js"
+              "./src/assets/assets/js/form-basic-inputs.js",
+              "./src/assets/js/bootstrap.js",
+              "./src/assets/js/helpers.js",
+              "./src/assets/js/menu.js"
             ]
           },
           "configurations": {
@@ -118,6 +122,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []

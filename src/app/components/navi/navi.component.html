@@ -1,4 +1,4 @@
-<div class="layout-wrapper layout-content-navbar">
+<div *ngIf="isLoggedIn | async" class="layout-wrapper layout-content-navbar">
   <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
       <a href="index.html" class="app-brand-link">
@@ -46,7 +46,7 @@
             </g>
           </svg>
         </span>
-        <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+        <span class="app-brand-text demo menu-text fw-bolder ms-2">SauVet</span>
       </a>
 
       <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -54,46 +54,84 @@
       </a>
     </div>
 
-    <div class="menu-inner-shadow"></div>
 
-    <ul class="menu-inner py-1">
-      <li class="menu-item active">
-        <a href="hayvan-kayit.component.html" class="menu-link">
-          <i class="menu-icon tf-icons bx bx-home-circle"></i>
-          <div data-i18n="Analytics">Hastalar</div>
-        </a>
-      </li>
+      <ul class="menu-inner py-1">
+        <li class="menu-item">
+          <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-layout"></i>
+            <div data-i18n="Layouts">Layouts</div>
+          </a>
 
-      <li class="menu-item">
-        <a href="hayvan-kayit-add.component.html" class="menu-link">
-          <i class="menu-icon tf-icons bx bx-collection"></i>
-          <div data-i18n="Basic">Hasta Ekleme</div>
-        </a>
-      </li>
-      <li class="menu-item">
-        <a href="cards-basic.html" class="menu-link">
-          <i class="menu-icon tf-icons bx bx-collection"></i>
-          <div data-i18n="Basic">Cards</div>
-        </a>
-      </li>
-      <li class="menu-item">
-        <a href="cards-basic.html" class="menu-link">
-          <i class="menu-icon tf-icons bx bx-collection"></i>
-          <div data-i18n="Basic">Cards</div>
-        </a>
-      </li>
-      <li class="menu-item">
-        <a href="cards-basic.html" class="menu-link">
-          <i class="menu-icon tf-icons bx bx-collection"></i>
-          <div data-i18n="Basic">Cards</div>
-        </a>
-      </li>
-      <li class="menu-item">
-        <a href="cards-basic.html" class="menu-link">
-          <i class="menu-icon tf-icons bx bx-collection"></i>
-          <div data-i18n="Basic">Cards</div>
-        </a>
-      </li>
-    </ul>
+          <ul class="menu-sub">
+            <li class="menu-item">
+              <a routerLink="/hayvanKayits/getall" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">Hastalar</div>
+              </a>
+            </li>
+
+            <li class="menu-item">
+              <a routerLink="/hayvanKayits/add" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Basic">Hasta Ekleme</div>
+              </a>
+            </li>
+
+          </ul>
+        </li>
+        <li class="menu-item">
+          <a routerLink="/hayvanTedavis/getall" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+            <div data-i18n="Analytics">Tedaviler</div>
+          </a>
+        </li>
+
+        <li class="menu-item">
+          <a routerLink="/hayvanTedavis/add" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <div data-i18n="Basic">Tedavi Ekleme</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a routerLink="/hayvanSahiplendirmes/getall" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+            <div data-i18n="Analytics">Sahiplendirmeler</div>
+          </a>
+        </li>
+
+        <li class="menu-item">
+          <a routerLink="/hayvanSahiplendirmes/add" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <div data-i18n="Basic">Hayvan Sahiplendirme</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a routerLink="/mamas/getall" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <div data-i18n="Basic">Mamalar</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a routerLink="/mamas/add" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <div data-i18n="Basic">Mama Ekleme</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a routerLink="/hekims/getall" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <div data-i18n="Basic">Hekimler</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a routerLink="/hekims/add" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <div data-i18n="Basic">Hekim Ekleme</div>
+          </a>
+        </li>
+      </ul>
+   
   </aside>
+
+
 </div>

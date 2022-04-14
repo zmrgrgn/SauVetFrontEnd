@@ -9,16 +9,26 @@ import { ResponseModel } from '../models/responseModel';
   providedIn: 'root',
 })
 export class BelediyeBilgiService {
+
   apiUrl = 'https://localhost:5001/api/';
+  
   constructor(private httpClient: HttpClient) {}
+  
   getBelediyeBilgis(): Observable<ListResponseModel<BelediyeBilgi>> {
     let newPath = this.apiUrl + 'belediyeBilgis/getall';
     return this.httpClient.get<ListResponseModel<BelediyeBilgi>>(newPath);
   }
+  
   add(belediyeBilgi: BelediyeBilgi): Observable<ResponseModel> {
-    return this.httpClient.post<ResponseModel>(
-      this.apiUrl + 'belediyeBilgis/add',
-      belediyeBilgi
-    );
+    return this.httpClient.post<ResponseModel>(this.apiUrl + 'belediyeBilgis/add',belediyeBilgi);
+  }
+
+  update(belediyeBilgi:BelediyeBilgi):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+'belediyeBilgis/update',belediyeBilgi);
+  }
+
+  delete(belediyeBilgi:BelediyeBilgi):Observable<ResponseModel>{
+    let newPath=this.apiUrl+'belediyeBilgis/delete';
+    return this.httpClient.post<ResponseModel>(newPath, belediyeBilgi);
   }
 }

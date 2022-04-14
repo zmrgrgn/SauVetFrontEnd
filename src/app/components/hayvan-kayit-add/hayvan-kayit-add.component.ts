@@ -6,7 +6,11 @@ import {
   Validators,
 } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { BelediyeBilgi } from 'src/app/models/belediyeBilgi';
+import { VatandasBilgi } from 'src/app/models/vatandasBilgi';
+import { BelediyeBilgiService } from 'src/app/services/belediye-bilgi.service';
 import { HayvanKayitService } from 'src/app/services/hayvan-kayit.service';
+import { VatandasBilgiService } from 'src/app/services/vatandas-bilgi.service';
 
 @Component({
   selector: 'app-hayvan-kayit-add',
@@ -15,14 +19,21 @@ import { HayvanKayitService } from 'src/app/services/hayvan-kayit.service';
 })
 export class HayvanKayitAddComponent implements OnInit {
   hayvanKayitAddForm: FormGroup;
+  vatandasBilgiFilter:number=0
+  vatandasBilgis:VatandasBilgi[]=[];
+  belediyeBilgiFilter:number=0
+  belediyeBilgis:BelediyeBilgi[]=[];
   constructor(
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
-    private hayvanKayitService: HayvanKayitService
+    private hayvanKayitService: HayvanKayitService,
+    private vatandasBilgiService:VatandasBilgiService,
+    private belediyeBilgiService:BelediyeBilgiService
   ) {}
 
   ngOnInit(): void {
     this.createHayvanKayitAddForm();
+    this.getAllVatandasBilgi();
   }
   createHayvanKayitAddForm() {
     this.hayvanKayitAddForm = this.formBuilder.group({
@@ -66,5 +77,25 @@ export class HayvanKayitAddComponent implements OnInit {
     } else {
       this.toastrService.error('Formunuz eksik', 'Dikkat');
     }
+  }
+  getSelectedVatandasBilgi(id: number){
+    if(this.vatandasBilgiFilter==id) return true;
+    else return false; 
+  }
+  getAllVatandasBilgi() {
+    this.vatandasBilgiService.getVatandasBilgis().subscribe((response) => {
+      this.vatandasBilgis = response.data;
+      console.log(this.vatandasBilgis);
+    });
+  }
+  getSelectedBelediyeBilgi(id: number){
+    if(this.belediyeBilgiFilter==id) return true;
+    else return false; 
+  }
+  getAllBelediyeBilgi() {
+    this.belediyeBilgiService.getBelediyeBilgis().subscribe((response) => {
+      this.belediyeBilgis = response.data;
+      console.log(this.belediyeBilgis);
+    });
   }
 }

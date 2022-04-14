@@ -5,8 +5,10 @@ import {
   Validators,
   FormBuilder,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +20,9 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private localStorageService: LocalStorageService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -34,17 +38,17 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
-      let loginModel = Object.assign({}, this.loginForm.value);
-      this.authService.login(loginModel).subscribe(
-        (response) => {
-          this.toastrService.info(response.message);
-          localStorage.setItem('token', response.data.token);
-        },
-        (responseError) => {
-          this.toastrService.error(responseError.error);
-        }
-      );
+      let user = Object.assign({}, this.loginForm.value);
+      this.authService.login(user).subscribe(successResponse => {
+        this.localStorageService.add("token", successResponse.data.token);
+       
+        this.authService.isLoggedIn = true;
+        this.router.navigateByUrl('/hayvanKayits/getall')
+        this.toastrService.success("İşlem başarılı", "Giriş yapıldı");
+      }, errorResponse => {
+        this.authService.isLoggedIn = false;
+        this.toastrService.error(errorResponse.error.message, "Giriş yapılamadı");
+      })
     }
   }
 }
