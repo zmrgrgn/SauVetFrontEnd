@@ -1,1 +1,105 @@
-<p>mama-update works!</p>
+<div *ngIf="currentMama && mamaUpdateForm">
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex justify-content-between">
+                <h5>{{currentMama.ad}} Güncelle</h5>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong>ID:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-control text-center" [placeholder]="currentMama.id" disabled />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="tarih">Tarih:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="mamaUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="tarih" formControlName="tarih" class="form-control"
+                                        [placeholder]="currentMama.tarih" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="ad">Adı:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="mamaUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="ad" formControlName="ad" class="form-control"
+                                        [placeholder]="currentMama.ad" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="malzemeTur">Malzeme Tür:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="mamaUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="malzemeTur" formControlName="malzemeTur" class="form-control"
+                                        [placeholder]="currentMama.malzemeTur" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="miktar">Miktar: </label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="mamaUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="miktar" formControlName="miktar" class="form-control"
+                                        [placeholder]="currentMama.miktar" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="birim">Birim: </label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="mamaUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="birim" formControlName="birim" class="form-control"
+                                        [placeholder]="currentMama.birim" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer mt-1">
+            <div class="d-flex justify-content-end">
+                <button (click)="update()" type="button" class="btn btn-success me-3">Güncelle</button>
+                <button (click)="closeUpdateModal()" type="button" class="btn btn-danger">İptal</button>
+            </div>
+        </div>
+    </div>
+</div>

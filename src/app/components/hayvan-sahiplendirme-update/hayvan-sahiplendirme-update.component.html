@@ -1,1 +1,89 @@
-<p>hayvan-sahiplendirme-update works!</p>
+<div *ngIf="currentHayvanSahiplendirme && hayvanSahiplendirmeUpdateForm">
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex justify-content-between">
+                <h5>{{currentHayvanSahiplendirme.id}} Güncelle</h5>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong>ID:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-control text-center" [placeholder]="currentHayvanSahiplendirme.id" disabled />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="hayvanId">Hayvan Id:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanSahiplendirmeUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="hayvanId" formControlName="hayvanId" class="form-control"
+                                        [placeholder]="currentHayvanSahiplendirme.hayvanId" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="vatandasId">Vatandaş Id:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanSahiplendirmeUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="vatandasId" formControlName="vatandasId" class="form-control"
+                                        [placeholder]="currentHayvanSahiplendirme.vatandasId" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="belediyeId">Belediye Id:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanSahiplendirmeUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="belediyeId" formControlName="belediyeId" class="form-control"
+                                        [placeholder]="currentHayvanSahiplendirme.belediyeId" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="tarih">Tarih:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanSahiplendirmeUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="tarih" formControlName="tarih" class="form-control"
+                                        [placeholder]="currentHayvanSahiplendirme.tarih" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer mt-1">
+            <div class="d-flex justify-content-end">
+                <button (click)="update()" type="button" class="btn btn-success me-3">Güncelle</button>
+                <button (click)="closeUpdateModal()" type="button" class="btn btn-danger">İptal</button>
+            </div>
+        </div>
+    </div>
+</div>

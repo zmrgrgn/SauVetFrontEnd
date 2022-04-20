@@ -1,1 +1,270 @@
-<p>hayvan-kayit-update works!</p>
+<div *ngIf="currentHayvanKayit && hayvanKayitUpdateForm">
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex justify-content-between">
+                <h5>{{currentHayvanKayit.ad}} Güncelle</h5>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong>ID:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-control text-center" [placeholder]="currentHayvanKayit.id" disabled />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="vatandasId">Vatandaş Id:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanKayitUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="vatandasId" formControlName="vatandasId" class="form-control"
+                                        [placeholder]="currentHayvanKayit.vatandasId" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="belediyeId">Belediye Id:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanKayitUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="belediyeId" formControlName="belediyeId" class="form-control"
+                                        [placeholder]="currentHayvanKayit.belediyeId" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="kafesNo">Kafes No:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanKayitUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="kafesNo" formControlName="kafesNo" class="form-control"
+                                        [placeholder]="currentHayvanKayit.kafesNo" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="cipNo">Çip Numarası:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanKayitUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="cipNo" formControlName="cipNo" class="form-control"
+                                        [placeholder]="currentHayvanKayit.cipNo" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="kulakNo">Kulak Numarası:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanKayitUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="kulakNo" formControlName="kulakNo" class="form-control"
+                                        [placeholder]="currentHayvanKayit.kulakNo" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="ad">Adı:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanKayitUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="ad" formControlName="ad" class="form-control"
+                                        [placeholder]="currentHayvanKayit.ad" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="hayvanTur">Hayvan Türü:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanKayitUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="hayvanTur" formControlName="hayvanTur" class="form-control"
+                                        [placeholder]="currentHayvanKayit.hayvanTur" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="irk">Irkı:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanKayitUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="irk" formControlName="irk" class="form-control"
+                                        [placeholder]="currentHayvanKayit.irk" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="yas">Yaşı:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanKayitUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="yas" formControlName="yas" class="form-control"
+                                        [placeholder]="currentHayvanKayit.yas" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="cinsiyet">Cinsiyeti:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanKayitUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="cinsiyet" formControlName="cinsiyet" class="form-control"
+                                        [placeholder]="currentHayvanKayit.cinsiyet" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="esgal">Eşgal:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanKayitUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="esgal" formControlName="esgal" class="form-control"
+                                        [placeholder]="currentHayvanKayit.esgal" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="gebeMi">Gebelik Durumu:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanKayitUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="gebeMi" formControlName="gebeMi" class="form-control"
+                                        [placeholder]="currentHayvanKayit.gebeMi" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="geldigiTarih">Geldiği Tarih:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanKayitUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="geldigiTarih" formControlName="geldigiTarih" class="form-control"
+                                        [placeholder]="currentHayvanKayit.geldigiTarih" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="geldigiAdres">Geldiği Adres:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanKayitUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="geldigiAdres" formControlName="geldigiAdres" class="form-control"
+                                        [placeholder]="currentHayvanKayit.geldigiAdres" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="anamnez">Anamnez:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanKayitUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="anamnez" formControlName="anamnez" class="form-control"
+                                        [placeholder]="currentHayvanKayit.anamnez" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="fotograf">Fotoğraf:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanKayitUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="fotograf" formControlName="fotograf" class="form-control"
+                                        [placeholder]="currentHayvanKayit.fotograf" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="card-footer mt-1">
+            <div class="d-flex justify-content-end">
+                <button (click)="update()" type="button" class="btn btn-success me-3">Güncelle</button>
+                <button (click)="closeUpdateModal()" type="button" class="btn btn-danger">İptal</button>
+            </div>
+        </div>
+    </div>
+</div>

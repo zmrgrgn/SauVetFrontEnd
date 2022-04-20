@@ -43,6 +43,8 @@ import { VatandasBilgiUpdateComponent } from './components/vatandas-bilgi-update
 import { VatandasBilgiDeleteComponent } from './components/vatandas-bilgi-delete/vatandas-bilgi-delete.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { LayoutComponent } from './components/layout/layout.component';
+import { RegisterComponent } from './components/register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,6 +80,8 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     VatandasBilgiDeleteComponent,
     HekimDeleteComponent,
     BelediyeBilgiUpdateComponent,
+    LayoutComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

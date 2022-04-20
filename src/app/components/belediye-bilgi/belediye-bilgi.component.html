@@ -32,7 +32,7 @@
                                         <td>{{belediyeBilgi.belediyeAd}}</td>
                                         <td>
                                             <div class="demo-inline-spacing">
-                                                <button type="button" class="btn btn-xs btn-primary">Düzenle</button>
+                                                <button (click)="showBelediyeBilgiUpdateModal(belediyeBilgi)" type="button" class="btn btn-xs btn-primary">Düzenle</button>
                                                 <button type="button" (click)="showBelediyeBilgiDeleteModal(belediyeBilgi)" class="btn btn-xs btn-primary">Sil</button>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                                 class="bi bi-archive-fill" viewBox="0 0 16 16">

@@ -12,15 +12,21 @@
                     <div class="mb-3 row">
                       <label for="hayvanId" class="col-md-2 col-form-label">Hayvan Id</label>
                       <div class="col-md-10">
-                        <input class="form-control" type="text" value="Sneat" id="hayvanId"
-                          formControlName="hayvanId" />
+                        <select [(ngModel)]="hayvanKayitFilter" class="form-select" aria-label="Default select example" id="hayvanId" formControlName="hayvanId">
+                          <option value=0>Kişi Seçiniz</option>
+                          <option *ngFor="let hayvanKayit of hayvanKayits" [value]="hayvanKayit.id" [selected]="getSelectedHayvanKayit(hayvanKayit.id)" 
+                          >{{hayvanKayit.ad}}</option>
+                        </select>
                       </div>
                     </div>
                     <div class="mb-3 row">
                       <label for="vatandasId" class="col-md-2 col-form-label">Vatandas Id</label>
                       <div class="col-md-10">
-                        <input class="form-control" type="text" value="Sneat" id="vatandasId"
-                          formControlName="vatandasId" />
+                        <select [(ngModel)]="vatandasBilgiFilter" class="form-select" aria-label="Default select example" id="vatandasId" formControlName="vatandasId">
+                          <option value=0>Kişi Seçiniz</option>
+                          <option *ngFor="let vatandasBilgi of vatandasBilgis" [value]="vatandasBilgi.id" [selected]="getSelectedVatandasBilgi(vatandasBilgi.id)" 
+                          >{{vatandasBilgi.ad}}</option>
+                        </select>
                       </div>
                     </div>
                     <div class="mb-3 row">

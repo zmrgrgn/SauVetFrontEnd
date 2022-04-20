@@ -6,7 +6,11 @@ import {
   Validators,
 } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { HayvanKayit } from 'src/app/models/hayvanKayit';
+import { Hekim } from 'src/app/models/hekim';
+import { HayvanKayitService } from 'src/app/services/hayvan-kayit.service';
 import { HayvanTedaviService } from 'src/app/services/hayvan-tedavi.service';
+import { HekimService } from 'src/app/services/hekim.service';
 
 @Component({
   selector: 'app-hayvan-tedavi-add',
@@ -15,14 +19,22 @@ import { HayvanTedaviService } from 'src/app/services/hayvan-tedavi.service';
 })
 export class HayvanTedaviAddComponent implements OnInit {
   hayvanTedaviAddForm: FormGroup;
+  hekimFilter:number=0
+  hekims:Hekim[]=[];
+  hayvanKayitFilter:string="0"
+  hayvanKayits:HayvanKayit[]=[];
   constructor(
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
-    private hayvanTedaviService: HayvanTedaviService
+    private hayvanTedaviService: HayvanTedaviService,
+    private hekimService:HekimService,
+    private hayvanKayitService:HayvanKayitService
   ) {}
 
   ngOnInit(): void {
     this.createHayvanTedaviAddForm();
+    this.getAllHekim();
+    this.getAllHayvanKayit();
   }
   createHayvanTedaviAddForm() {
     this.hayvanTedaviAddForm = this.formBuilder.group({
@@ -58,5 +70,27 @@ export class HayvanTedaviAddComponent implements OnInit {
     } else {
       this.toastrService.error('Formunuz eksik', 'Dikkat');
     }
+  }
+
+  getSelectedHekim(id: number){
+    if(this.hekimFilter==id) return true;
+    else return false; 
+  }
+  getAllHekim() {
+    this.hekimService.getHekims().subscribe((response) => {
+      this.hekims = response.data;
+      console.log(this.hekims);
+    });
+  }
+
+  getSelectedHayvanKayit(id: string){
+    if(this.hayvanKayitFilter==id) return true;
+    else return false; 
+  }
+  getAllHayvanKayit() {
+    this.hayvanKayitService.getHayvanKayits().subscribe((response) => {
+      this.hayvanKayits = response.data;
+      console.log(this.hayvanKayits);
+    });
   }
 }

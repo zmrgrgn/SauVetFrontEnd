@@ -13,6 +13,7 @@ import { HekimComponent } from './components/hekim/hekim.component';
 import { LoginComponent } from './components/login/login.component';
 import { MamaAddComponent } from './components/mama-add/mama-add.component';
 import { MamaComponent } from './components/mama/mama.component';
+import { RegisterComponent } from './components/register/register.component';
 import { VatandasBilgiAddComponent } from './components/vatandas-bilgi-add/vatandas-bilgi-add.component';
 import { VatandasBilgiComponent } from './components/vatandas-bilgi/vatandas-bilgi.component';
 import { LoginGuard } from './guards/login.guard';
@@ -87,6 +88,8 @@ const routes: Routes = [
 
   { path: 'mamas/getall', component: MamaComponent, canActivate: [LoginGuard] },
   { path: 'mamas/add', component: MamaAddComponent, canActivate: [LoginGuard] },
+  
+  { path: 'register', component: RegisterComponent },
 
   { path: 'login', component: LoginComponent },
 ];

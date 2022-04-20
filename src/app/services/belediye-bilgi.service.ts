@@ -28,7 +28,6 @@ export class BelediyeBilgiService {
   }
 
   delete(belediyeBilgi:BelediyeBilgi):Observable<ResponseModel>{
-    let newPath=this.apiUrl+'belediyeBilgis/delete';
-    return this.httpClient.post<ResponseModel>(newPath, belediyeBilgi);
+    return this.httpClient.post<ResponseModel>(this.apiUrl+'belediyeBilgis/delete',belediyeBilgi);
   }
 }

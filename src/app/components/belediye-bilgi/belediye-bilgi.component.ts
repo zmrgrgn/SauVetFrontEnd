@@ -3,6 +3,7 @@ import { BelediyeBilgi } from 'src/app/models/belediyeBilgi';
 import { BelediyeBilgiService } from 'src/app/services/belediye-bilgi.service';
 import { MatDialog } from '@angular/material/dialog';
 import { BelediyeBilgiDeleteComponent } from '../belediye-bilgi-delete/belediye-bilgi-delete.component';
+import { BelediyeBilgiUpdateComponent } from '../belediye-bilgi-update/belediye-bilgi-update.component';
 
 @Component({
   selector: 'app-belediye-bilgi',
@@ -33,6 +34,17 @@ export class BelediyeBilgiComponent implements OnInit {
     });
     belediyeBilgiDeleteModal.componentInstance.deletedBelediyeBilgi=belediyeBilgi;
     belediyeBilgiDeleteModal.afterClosed().subscribe(result=>{
+      this.ngOnInit();
+    })
+  }
+  showBelediyeBilgiUpdateModal(belediyeBilgi:BelediyeBilgi) {
+    const belediyeBilgiUpdateModal = this.dialog.open(BelediyeBilgiUpdateComponent, {
+      disableClose: true,
+      width: "35%"
+    });
+    belediyeBilgiUpdateModal.componentInstance.currentBelediyeBilgi = belediyeBilgi;
+
+    belediyeBilgiUpdateModal.afterClosed().subscribe(result => {
       this.ngOnInit();
     })
   }

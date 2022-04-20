@@ -1,1 +1,164 @@
-<p>hayvan-tedavi-update works!</p>
+<div *ngIf="currentHayvanTedavi && hayvanTedaviUpdateForm">
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex justify-content-between">
+                <h5>{{currentHayvanTedavi.tedaviBaslik}} Güncelle</h5>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong>ID:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-control text-center" [placeholder]="currentHayvanTedavi.id" disabled />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="hayvanId">Hayvan Id:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanTedaviUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="hayvanId" formControlName="hayvanId" class="form-control"
+                                        [placeholder]="currentHayvanTedavi.hayvanId" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="hekimId">Hekim Id:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanTedaviUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="hekimId" formControlName="hekimId" class="form-control"
+                                        [placeholder]="currentHayvanTedavi.hekimId" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="tedaviBaslik">Tedavi Başlığı:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanTedaviUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="tedaviBaslik" formControlName="tedaviBaslik" class="form-control"
+                                        [placeholder]="currentHayvanTedavi.tedaviBaslik" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="tedaviDetay">Tedavi Detayı:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanTedaviUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="tedaviDetay" formControlName="tedaviDetay" class="form-control"
+                                        [placeholder]="currentHayvanTedavi.tedaviDetay" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="tedaviTarih">Tedavi Tarihi:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanTedaviUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="tedaviTarih" formControlName="tedaviTarih" class="form-control"
+                                        [placeholder]="currentHayvanTedavi.tedaviTarih" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="bulgular">Bulgular:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanTedaviUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="bulgular" formControlName="bulgular" class="form-control"
+                                        [placeholder]="currentHayvanTedavi.bulgular" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="notlar">Notlar:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanTedaviUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="notlar" formControlName="notlar" class="form-control"
+                                        [placeholder]="currentHayvanTedavi.notlar" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="olduMu">Öldü mü:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanTedaviUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="olduMu" formControlName="olduMu" class="form-control"
+                                        [placeholder]="currentHayvanTedavi.olduMu" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="olumNedeni">Ölüm Nedeni:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanTedaviUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="olumNedeni" formControlName="olumNedeni" class="form-control"
+                                        [placeholder]="currentHayvanTedavi.olumNedeni" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer mt-1">
+            <div class="d-flex justify-content-end">
+                <button (click)="update()" type="button" class="btn btn-success me-3">Güncelle</button>
+                <button (click)="closeUpdateModal()" type="button" class="btn btn-danger">İptal</button>
+            </div>
+        </div>
+    </div>
+</div>

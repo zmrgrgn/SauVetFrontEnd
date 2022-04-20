@@ -17,6 +17,8 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  rememberMe: boolean = false;
+  rememberedEmail: any;
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
@@ -50,5 +52,30 @@ export class LoginComponent implements OnInit {
         this.toastrService.error(errorResponse.error.message, "Giriş yapılamadı");
       })
     }
+  }
+  autoFillEmail() {
+    if (this.rememberedEmail) {
+      let email = this.localStorageService.getItem("remember");
+      if (email != null) {
+        this.loginForm.get("email")?.setValue(email);
+      }
+    }
+  }
+
+  deleteRememberedEmail() {
+    this.localStorageService.remove("remember");
+  }
+
+  checkRememberedUser() {
+    let result = this.localStorageService.getItem("remember");
+    if (result != null) {
+      this.rememberedEmail = result;
+    } else {
+      this.rememberedEmail = undefined;
+    }
+  }
+
+  saveEmail(email: string) {
+    this.localStorageService.add("remember", email);
   }
 }

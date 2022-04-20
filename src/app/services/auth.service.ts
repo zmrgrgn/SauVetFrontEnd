@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { LoginModel } from '../models/loginModel';
+import { RegisterModel } from '../models/registerModel';
 import { SingleResponseModel } from '../models/singleResponseModel';
 import { TokenModel } from '../models/tokenModel';
 import { UserForLogin } from '../models/userForLogin';
@@ -57,6 +58,10 @@ export class AuthService {
   logOut() {
     this.localStorageService.remove("token");
     this.loggedIn.next(false);
+  }
+  register(newUser: RegisterModel): Observable<SingleResponseModel<TokenModel>> {
+    let newPath = this.apiUrl + 'register'
+    return this.httpClient.post<SingleResponseModel<TokenModel>>(newPath, newUser);
   }
   getUser(): UserForLogin | undefined {
     let token = this.getToken();

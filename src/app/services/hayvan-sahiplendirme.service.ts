@@ -9,18 +9,28 @@ import { ResponseModel } from '../models/responseModel';
   providedIn: 'root',
 })
 export class HayvanSahiplendirmeService {
+
   apiUrl = 'https://localhost:5001/api/';
+  
   constructor(private httpClient: HttpClient) {}
+  
   getHayvanSahiplendirmes(): Observable<
     ListResponseModel<HayvanSahiplendirme>
   > {
     let newPath = this.apiUrl + 'hayvanSahiplendirmes/getall';
     return this.httpClient.get<ListResponseModel<HayvanSahiplendirme>>(newPath);
   }
+  
   add(hayvanSahiplendirme: HayvanSahiplendirme): Observable<ResponseModel> {
-    return this.httpClient.post<ResponseModel>(
-      this.apiUrl + 'hayvanSahiplendirmes/add',
-      hayvanSahiplendirme
-    );
+    return this.httpClient.post<ResponseModel>(this.apiUrl + 'hayvanSahiplendirmes/add',hayvanSahiplendirme);
   }
+  
+  update(hayvanSahiplendirme: HayvanSahiplendirme):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+'hayvanSahiplendirmes/update',hayvanSahiplendirme);
+  }
+
+  delete(hayvanSahiplendirme: HayvanSahiplendirme):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+'hayvanSahiplendirmes/delete',hayvanSahiplendirme);
+  }
+
 }

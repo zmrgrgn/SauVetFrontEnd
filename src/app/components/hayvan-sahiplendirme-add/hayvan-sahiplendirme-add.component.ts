@@ -6,7 +6,11 @@ import {
   Validators,
 } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { HayvanKayit } from 'src/app/models/hayvanKayit';
+import { VatandasBilgi } from 'src/app/models/vatandasBilgi';
+import { HayvanKayitService } from 'src/app/services/hayvan-kayit.service';
 import { HayvanSahiplendirmeService } from 'src/app/services/hayvan-sahiplendirme.service';
+import { VatandasBilgiService } from 'src/app/services/vatandas-bilgi.service';
 
 @Component({
   selector: 'app-hayvan-sahiplendirme-add',
@@ -15,14 +19,22 @@ import { HayvanSahiplendirmeService } from 'src/app/services/hayvan-sahiplendirm
 })
 export class HayvanSahiplendirmeAddComponent implements OnInit {
   hayvanSahiplendirmeAddForm: FormGroup;
+  vatandasBilgiFilter:number=0
+  vatandasBilgis:VatandasBilgi[]=[];
+  hayvanKayitFilter:string="0"
+  hayvanKayits:HayvanKayit[]=[];
   constructor(
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
-    private hayvanSahiplendirmeService: HayvanSahiplendirmeService
+    private hayvanSahiplendirmeService: HayvanSahiplendirmeService,
+    private vatandasBilgiService:VatandasBilgiService,
+    private hayvanKayitService:HayvanKayitService
   ) {}
 
   ngOnInit(): void {
     this.createHayvanSahiplendirmeAddForm();
+    this.getAllVatandasBilgi();
+    this.getAllHayvanKayit();
   }
   createHayvanSahiplendirmeAddForm() {
     this.hayvanSahiplendirmeAddForm = this.formBuilder.group({
@@ -56,5 +68,25 @@ export class HayvanSahiplendirmeAddComponent implements OnInit {
     } else {
       this.toastrService.error('Formunuz eksik', 'Dikkat');
     }
+  }
+  getSelectedVatandasBilgi(id: number){
+    if(this.vatandasBilgiFilter==id) return true;
+    else return false; 
+  }
+  getAllVatandasBilgi() {
+    this.vatandasBilgiService.getVatandasBilgis().subscribe((response) => {
+      this.vatandasBilgis = response.data;
+      console.log(this.vatandasBilgis);
+    });
+  }
+  getSelectedHayvanKayit(id: string){
+    if(this.hayvanKayitFilter==id) return true;
+    else return false; 
+  }
+  getAllHayvanKayit() {
+    this.hayvanKayitService.getHayvanKayits().subscribe((response) => {
+      this.hayvanKayits = response.data;
+      console.log(this.hayvanKayits);
+    });
   }
 }

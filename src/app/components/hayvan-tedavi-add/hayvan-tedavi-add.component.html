@@ -12,14 +12,21 @@
                     <div class="mb-3 row">
                       <label for="hayvanId" class="col-md-2 col-form-label">Hayvan Id</label>
                       <div class="col-md-10">
-                        <input class="form-control" type="text" value="Sneat" id="hayvanId"
-                          formControlName="hayvanId" />
+                        <select [(ngModel)]="hayvanKayitFilter" class="form-select" aria-label="Default select example" id="hayvanId" formControlName="hayvanId">
+                          <option value=0>Kişi Seçiniz</option>
+                          <option *ngFor="let hayvanKayit of hayvanKayits" [value]="hayvanKayit.id" [selected]="getSelectedHayvanKayit(hayvanKayit.id)" 
+                          >{{hayvanKayit.ad}}</option>
+                        </select>
                       </div>
                     </div>
                     <div class="mb-3 row">
                       <label for="hekimId" class="col-md-2 col-form-label">Hekim Id</label>
                       <div class="col-md-10">
-                        <input class="form-control" type="text" value="Sneat" id="hekimId" formControlName="hekimId" />
+                        <select [(ngModel)]="hekimFilter" class="form-select" aria-label="Default select example" id="hekimId" formControlName="hekimId">
+                          <option value=0>Kişi Seçiniz</option>
+                          <option *ngFor="let hekim of hekims" [value]="hekim.id" [selected]="getSelectedHekim(hekim.id)" 
+                          >{{hekim.ad}}</option>
+                        </select>
                       </div>
                     </div>
                     <div class="mb-3 row">
@@ -57,9 +64,12 @@
                       </div>
                     </div>
                     <div class="mb-3 row">
-                      <label for="olduMu" class="col-md-2 col-form-label">Öldü Mü</label>
+                      <label for="olduMu" class="col-md-2 col-form-label">Ölüm Durumu</label>
                       <div class="col-md-10">
-                        <input class="form-control" type="text" value="Sneat" id="olduMu" formControlName="olduMu" />
+                        <select class="form-select" aria-label="Default select example" id="olduMu" formControlName="olduMu">
+                          <option value="evet">Öldü</option>
+                          <option value="hayir">Ölmedi</option>
+                        </select>
                       </div>
                     </div>
                     <div class="mb-3 row">

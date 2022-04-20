@@ -3,4 +3,5 @@ export class UserForLogin {
     email: string;
     name: string;
     roles: string[];
+    hekimId:number;
 }

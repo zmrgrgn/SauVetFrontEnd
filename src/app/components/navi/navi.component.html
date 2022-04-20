@@ -56,13 +56,6 @@
 
 
       <ul class="menu-inner py-1">
-        <li class="menu-item">
-          <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons bx bx-layout"></i>
-            <div data-i18n="Layouts">Layouts</div>
-          </a>
-
-          <ul class="menu-sub">
             <li class="menu-item">
               <a routerLink="/hayvanKayits/getall" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
@@ -77,8 +70,6 @@
               </a>
             </li>
 
-          </ul>
-        </li>
         <li class="menu-item">
           <a routerLink="/hayvanTedavis/getall" class="menu-link">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
@@ -129,9 +120,61 @@
             <div data-i18n="Basic">Hekim Ekleme</div>
           </a>
         </li>
+        <li class="menu-item">
+          <a routerLink="/belediyeBilgis/getall" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <div data-i18n="Basic">Belediyeler</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a routerLink="/belediyeBilgis/add" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <div data-i18n="Basic">Belediye Ekleme</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a routerLink="/vatandasBilgis/getall" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <div data-i18n="Basic">Vatandaşlar</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a routerLink="/vatandasBilgis/add" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <div data-i18n="Basic">Vatandaş Ekleme</div>
+          </a>
+        </li>
       </ul>
-   
   </aside>
+  <div *ngIf="isLoggedIn | async" class="layout-page">
+    <!-- Navbar -->
 
+    <nav
+      class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+      id="layout-navbar"
+    >
+      <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+          <i class="bx bx-menu bx-sm"></i>
+        </a>
+      </div>
 
+      <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+       
+
+        <ul class="navbar-nav flex-row align-items-center ms-auto">
+          <li class="nav-item lh-1 me-3">
+            <a  class="menu-link">
+              <div data-i18n="Basic">Profilim</div>
+            </a>
+          </li>
+          <li class="nav-item lh-1 me-3">
+            <a (click)="logOut()" class="menu-link">
+              <div data-i18n="Basic">Çıkış Yap</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 </div>
