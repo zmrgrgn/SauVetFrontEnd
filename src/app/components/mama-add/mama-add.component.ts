@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MamaService } from 'src/app/services/mama.service';
 
@@ -13,7 +14,8 @@ export class MamaAddComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
-    private mamaService: MamaService
+    private mamaService: MamaService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -33,6 +35,7 @@ export class MamaAddComponent implements OnInit {
       let mamaModel = Object.assign({}, this.mamaAddForm.value);
       this.mamaService.add(mamaModel).subscribe(
         (response) => {
+          this.router.navigateByUrl('/mamas/getall');
           this.toastrService.success(response.message, 'Başarılı');
         },
         (responseError) => {

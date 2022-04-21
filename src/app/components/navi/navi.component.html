@@ -1,7 +1,7 @@
 <div *ngIf="isLoggedIn | async" class="layout-wrapper layout-content-navbar">
   <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-      <a href="index.html" class="app-brand-link">
+      <a href="/home" class="app-brand-link">
         <span class="app-brand-logo demo">
           <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -56,91 +56,97 @@
 
 
       <ul class="menu-inner py-1">
+        <li class="menu-item">
+          <a routerLink="/home" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+            <div data-i18n="Analytics">Anasayfa</div>
+          </a>
+        </li>
             <li class="menu-item">
               <a routerLink="/hayvanKayits/getall" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <i class="menu-icon tf-icons bx bx-table"></i>
                 <div data-i18n="Analytics">Hastalar</div>
               </a>
             </li>
 
             <li class="menu-item">
               <a routerLink="/hayvanKayits/add" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Basic">Hasta Ekleme</div>
               </a>
             </li>
 
         <li class="menu-item">
           <a routerLink="/hayvanTedavis/getall" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+            <i class="menu-icon tf-icons bx bx-table"></i>
             <div data-i18n="Analytics">Tedaviler</div>
           </a>
         </li>
 
         <li class="menu-item">
           <a routerLink="/hayvanTedavis/add" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <i class="menu-icon tf-icons bx bx-detail"></i>
             <div data-i18n="Basic">Tedavi Ekleme</div>
           </a>
         </li>
         <li class="menu-item">
           <a routerLink="/hayvanSahiplendirmes/getall" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+            <i class="menu-icon tf-icons bx bx-table"></i>
             <div data-i18n="Analytics">Sahiplendirmeler</div>
           </a>
         </li>
 
         <li class="menu-item">
           <a routerLink="/hayvanSahiplendirmes/add" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <i class="menu-icon tf-icons bx bx-detail"></i>
             <div data-i18n="Basic">Hayvan Sahiplendirme</div>
           </a>
         </li>
         <li class="menu-item">
           <a routerLink="/mamas/getall" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <i class="menu-icon tf-icons bx bx-table"></i>
             <div data-i18n="Basic">Mamalar</div>
           </a>
         </li>
         <li class="menu-item">
           <a routerLink="/mamas/add" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <i class="menu-icon tf-icons bx bx-detail"></i>
             <div data-i18n="Basic">Mama Ekleme</div>
           </a>
         </li>
         <li class="menu-item">
           <a routerLink="/hekims/getall" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <i class="menu-icon tf-icons bx bx-table"></i>
             <div data-i18n="Basic">Hekimler</div>
           </a>
         </li>
         <li class="menu-item">
           <a routerLink="/hekims/add" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <i class="menu-icon tf-icons bx bx-detail"></i>
             <div data-i18n="Basic">Hekim Ekleme</div>
           </a>
         </li>
         <li class="menu-item">
           <a routerLink="/belediyeBilgis/getall" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <i class="menu-icon tf-icons bx bx-table"></i>
             <div data-i18n="Basic">Belediyeler</div>
           </a>
         </li>
         <li class="menu-item">
           <a routerLink="/belediyeBilgis/add" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <i class="menu-icon tf-icons bx bx-detail"></i>
             <div data-i18n="Basic">Belediye Ekleme</div>
           </a>
         </li>
         <li class="menu-item">
           <a routerLink="/vatandasBilgis/getall" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <i class="menu-icon tf-icons bx bx-table"></i>
             <div data-i18n="Basic">Vatandaşlar</div>
           </a>
         </li>
         <li class="menu-item">
           <a routerLink="/vatandasBilgis/add" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <i class="menu-icon tf-icons bx bx-detail"></i>
             <div data-i18n="Basic">Vatandaş Ekleme</div>
           </a>
         </li>

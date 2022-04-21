@@ -5,6 +5,7 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { HayvanKayit } from 'src/app/models/hayvanKayit';
 import { Hekim } from 'src/app/models/hekim';
@@ -28,7 +29,8 @@ export class HayvanTedaviAddComponent implements OnInit {
     private toastrService: ToastrService,
     private hayvanTedaviService: HayvanTedaviService,
     private hekimService:HekimService,
-    private hayvanKayitService:HayvanKayitService
+    private hayvanKayitService:HayvanKayitService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -54,6 +56,7 @@ export class HayvanTedaviAddComponent implements OnInit {
       let hayvanTedaviModel = Object.assign({}, this.hayvanTedaviAddForm.value);
       this.hayvanTedaviService.add(hayvanTedaviModel).subscribe(
         (response) => {
+          this.router.navigateByUrl('/hayvanTedavis/getall');
           this.toastrService.success(response.message, 'Başarılı');
         },
         (responseError) => {

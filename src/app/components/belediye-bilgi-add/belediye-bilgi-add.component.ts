@@ -5,6 +5,7 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BelediyeBilgiService } from 'src/app/services/belediye-bilgi.service';
 
@@ -18,7 +19,8 @@ export class BelediyeBilgiAddComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
-    private belediyeBilgiService: BelediyeBilgiService
+    private belediyeBilgiService: BelediyeBilgiService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -38,6 +40,7 @@ export class BelediyeBilgiAddComponent implements OnInit {
       this.belediyeBilgiService.add(belediyeBilgiModel).subscribe(
         (response) => {
           this.toastrService.success(response.message, 'Başarılı');
+          this.router.navigateByUrl('/belediyeBilgis/getall');
         },
         (responseError) => {
           if (responseError.error.Errors.lenght > 0) {

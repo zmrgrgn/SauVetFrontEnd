@@ -45,6 +45,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { LayoutComponent } from './components/layout/layout.component';
 import { RegisterComponent } from './components/register/register.component';
+import { HomeComponent } from './components/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,6 +83,7 @@ import { RegisterComponent } from './components/register/register.component';
     BelediyeBilgiUpdateComponent,
     LayoutComponent,
     RegisterComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

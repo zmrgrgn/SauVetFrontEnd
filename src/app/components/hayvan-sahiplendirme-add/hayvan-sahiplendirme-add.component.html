@@ -32,9 +32,12 @@
                     <div class="mb-3 row">
                       <label for="belediyeId" class="col-md-2 col-form-label">Belediye Id</label>
                       <div class="col-md-10">
-                        <input class="form-control" type="text" value="Sneat" id="belediyeId"
-                          formControlName="belediyeId" />
-                      </div>
+                      <select [(ngModel)]="belediyeBilgiFilter" class="form-select" aria-label="Default select example" id="belediyeId" formControlName="belediyeId">
+                        <option value=0>Belediye Seçiniz</option>
+                        <option *ngFor="let belediyeBilgi of belediyeBilgis" [value]="belediyeBilgi.id" [selected]="getSelectedBelediyeBilgi(belediyeBilgi.id)" 
+                        >{{belediyeBilgi.belediyeAd}}</option>
+                      </select>
+                    </div>
                     </div>
                     <div class="mb-3 row">
                       <label for="tarih" class="col-md-2 col-form-label">Tarih</label>

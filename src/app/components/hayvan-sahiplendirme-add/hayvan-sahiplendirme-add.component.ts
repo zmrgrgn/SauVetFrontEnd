@@ -5,9 +5,12 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { BelediyeBilgi } from 'src/app/models/belediyeBilgi';
 import { HayvanKayit } from 'src/app/models/hayvanKayit';
 import { VatandasBilgi } from 'src/app/models/vatandasBilgi';
+import { BelediyeBilgiService } from 'src/app/services/belediye-bilgi.service';
 import { HayvanKayitService } from 'src/app/services/hayvan-kayit.service';
 import { HayvanSahiplendirmeService } from 'src/app/services/hayvan-sahiplendirme.service';
 import { VatandasBilgiService } from 'src/app/services/vatandas-bilgi.service';
@@ -23,18 +26,23 @@ export class HayvanSahiplendirmeAddComponent implements OnInit {
   vatandasBilgis:VatandasBilgi[]=[];
   hayvanKayitFilter:string="0"
   hayvanKayits:HayvanKayit[]=[];
+  belediyeBilgiFilter:number=0
+  belediyeBilgis:BelediyeBilgi[]=[];
   constructor(
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
     private hayvanSahiplendirmeService: HayvanSahiplendirmeService,
     private vatandasBilgiService:VatandasBilgiService,
-    private hayvanKayitService:HayvanKayitService
+    private hayvanKayitService:HayvanKayitService,
+    private belediyeBilgiService:BelediyeBilgiService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
     this.createHayvanSahiplendirmeAddForm();
     this.getAllVatandasBilgi();
     this.getAllHayvanKayit();
+    this.getAllBelediyeBilgi();
   }
   createHayvanSahiplendirmeAddForm() {
     this.hayvanSahiplendirmeAddForm = this.formBuilder.group({
@@ -52,6 +60,7 @@ export class HayvanSahiplendirmeAddComponent implements OnInit {
       );
       this.hayvanSahiplendirmeService.add(hayvanSahiplendirmeModel).subscribe(
         (response) => {
+          this.router.navigateByUrl('/hayvanSahiplendirmes/getall');
           this.toastrService.success(response.message, 'Başarılı');
         },
         (responseError) => {
@@ -87,6 +96,16 @@ export class HayvanSahiplendirmeAddComponent implements OnInit {
     this.hayvanKayitService.getHayvanKayits().subscribe((response) => {
       this.hayvanKayits = response.data;
       console.log(this.hayvanKayits);
+    });
+  }
+  getSelectedBelediyeBilgi(id: number){
+    if(this.belediyeBilgiFilter==id) return true;
+    else return false; 
+  }
+  getAllBelediyeBilgi() {
+    this.belediyeBilgiService.getBelediyeBilgis().subscribe((response) => {
+      this.belediyeBilgis = response.data;
+      console.log(this.belediyeBilgis);
     });
   }
 }

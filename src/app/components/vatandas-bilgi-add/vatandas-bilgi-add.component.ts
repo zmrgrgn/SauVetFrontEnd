@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { VatandasBilgiService } from 'src/app/services/vatandas-bilgi.service';
 
@@ -13,7 +14,8 @@ export class VatandasBilgiAddComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
-    private vatandasBilgiService: VatandasBilgiService
+    private vatandasBilgiService: VatandasBilgiService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -35,6 +37,7 @@ export class VatandasBilgiAddComponent implements OnInit {
       );
       this.vatandasBilgiService.add(vatandasBilgiModel).subscribe(
         (response) => {
+          this.router.navigateByUrl('/vatandasBilgis/getall');
           this.toastrService.success(response.message, 'Başarılı');
         },
         (responseError) => {

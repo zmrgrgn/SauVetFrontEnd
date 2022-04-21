@@ -5,6 +5,7 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { HekimService } from 'src/app/services/hekim.service';
 
@@ -18,7 +19,8 @@ export class HekimAddComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
-    private hekimService: HekimService
+    private hekimService: HekimService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -39,6 +41,7 @@ export class HekimAddComponent implements OnInit {
       let hekimModel = Object.assign({}, this.hekimAddForm.value);
       this.hekimService.add(hekimModel).subscribe(
         (response) => {
+          this.router.navigateByUrl('/hekims/getall');
           this.toastrService.success(response.message, 'Başarılı');
         },
         (responseError) => {

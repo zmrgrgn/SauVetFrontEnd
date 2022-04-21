@@ -5,6 +5,7 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BelediyeBilgi } from 'src/app/models/belediyeBilgi';
 import { VatandasBilgi } from 'src/app/models/vatandasBilgi';
@@ -28,12 +29,14 @@ export class HayvanKayitAddComponent implements OnInit {
     private toastrService: ToastrService,
     private hayvanKayitService: HayvanKayitService,
     private vatandasBilgiService:VatandasBilgiService,
-    private belediyeBilgiService:BelediyeBilgiService
+    private belediyeBilgiService:BelediyeBilgiService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
     this.createHayvanKayitAddForm();
     this.getAllVatandasBilgi();
+    this.getAllBelediyeBilgi();
   }
   createHayvanKayitAddForm() {
     this.hayvanKayitAddForm = this.formBuilder.group({
@@ -62,6 +65,7 @@ export class HayvanKayitAddComponent implements OnInit {
       this.hayvanKayitService.add(hayvanKayitModel).subscribe(
         (response) => {
           this.toastrService.success(response.message, 'Başarılı');
+          this.router.navigateByUrl('/hayvanKayits/getall');
         },
         (responseError) => {
           if (responseError.error.Errors.lenght > 0) {

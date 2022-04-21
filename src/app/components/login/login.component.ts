@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         this.localStorageService.add("token", successResponse.data.token);
        
         this.authService.isLoggedIn = true;
-        this.router.navigateByUrl('/hayvanKayits/getall')
+        this.router.navigateByUrl('/home')
         this.toastrService.success("İşlem başarılı", "Giriş yapıldı");
       }, errorResponse => {
         this.authService.isLoggedIn = false;

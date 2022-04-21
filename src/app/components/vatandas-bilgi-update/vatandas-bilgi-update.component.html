@@ -7,17 +7,17 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-md-3">
+                <div class="mb-3 row">
                     <div class="row align-items-center">
                         <div class="col-md-4">
-                            <strong>ID:</strong>
+                            <strong class="float-end">ID:</strong>
                         </div>
                         <div class="col-md-8">
                             <input class="form-control text-center" [placeholder]="currentVatandasBilgi.id" disabled />
                         </div>
                     </div>
                 </div>
-                <div class="col-md-9">
+                <div class="mb-3 row">
                     <div class="row align-items-center">
                         <div class="col-md-4">
                             <strong class="float-end"><label for="ad">Kişi Adı:</label></strong>
@@ -33,7 +33,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-9">
+                <div class="mb-3 row">
                     <div class="row align-items-center">
                         <div class="col-md-4">
                             <strong class="float-end"><label for="soyad">Kişi Soyadı:</label></strong>
@@ -49,7 +49,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-9">
+                <div class="mb-3 row">
                     <div class="row align-items-center">
                         <div class="col-md-4">
                             <strong class="float-end"><label for="telNo">Telefon Numarası:</label></strong>
@@ -65,7 +65,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-9">
+                <div class="mb-3 row">
                     <div class="row align-items-center">
                         <div class="col-md-4">
                             <strong class="float-end"><label for="tcNo">Tc Numarası:</label></strong>
@@ -85,7 +85,7 @@
         </div>
         <div class="card-footer mt-1">
             <div class="d-flex justify-content-end">
-                <button (click)="update()" type="button" class="btn btn-success me-3">Güncelle</button>
+                <button (click)="update()" type="button" class="btn btn-fill btn-primary">Güncelle</button>
                 <button (click)="closeUpdateModal()" type="button" class="btn btn-danger">İptal</button>
             </div>
         </div>

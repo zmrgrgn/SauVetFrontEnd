@@ -15,22 +15,14 @@ export class FormService {
   }
   createHayvanKayitForm():FormGroup{
     return this.formBuilder.group({
-      vatandasId: ['', Validators.required],
-      belediyeId: ['', Validators.required],
       kafesNo: ['', Validators.required],
-      cipNo: ['', Validators.required],
-      kulakNo: ['', Validators.required],
       ad: ['', Validators.required],
       hayvanTur: ['', Validators.required],
       irk: ['', Validators.required],
       yas: ['', Validators.required],
       cinsiyet: ['', Validators.required],
-      esgal: ['', Validators.required],
       gebeMi: ['', Validators.required],
-      geldigiTarih: ['', Validators.required],
-      geldigiAdres: ['', Validators.required],
-      anamnez: ['', Validators.required],
-      fotograf: ['', Validators.required]
+      anamnez: ['', Validators.required]
     })
   }
   createHayvanSahiplendirmeForm():FormGroup{

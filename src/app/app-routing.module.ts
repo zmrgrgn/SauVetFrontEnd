@@ -10,6 +10,7 @@ import { HayvanTedaviAddComponent } from './components/hayvan-tedavi-add/hayvan-
 import { HayvanTedaviComponent } from './components/hayvan-tedavi/hayvan-tedavi.component';
 import { HekimAddComponent } from './components/hekim-add/hekim-add.component';
 import { HekimComponent } from './components/hekim/hekim.component';
+import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { MamaAddComponent } from './components/mama-add/mama-add.component';
 import { MamaComponent } from './components/mama/mama.component';
@@ -92,6 +93,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
 
   { path: 'login', component: LoginComponent },
+  {path:'home',component:HomeComponent, canActivate: [LoginGuard]}
 ];
 
 @NgModule({
