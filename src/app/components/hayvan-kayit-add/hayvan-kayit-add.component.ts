@@ -8,9 +8,13 @@ import {
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BelediyeBilgi } from 'src/app/models/belediyeBilgi';
+import { HayvanTur } from 'src/app/models/hayvanTur';
+import { KafesNo } from 'src/app/models/kafesNo';
 import { VatandasBilgi } from 'src/app/models/vatandasBilgi';
 import { BelediyeBilgiService } from 'src/app/services/belediye-bilgi.service';
 import { HayvanKayitService } from 'src/app/services/hayvan-kayit.service';
+import { HayvanTurService } from 'src/app/services/hayvan-tur.service';
+import { KafesNoService } from 'src/app/services/kafes-no.service';
 import { VatandasBilgiService } from 'src/app/services/vatandas-bilgi.service';
 
 @Component({
@@ -24,12 +28,18 @@ export class HayvanKayitAddComponent implements OnInit {
   vatandasBilgis:VatandasBilgi[]=[];
   belediyeBilgiFilter:number=0
   belediyeBilgis:BelediyeBilgi[]=[];
+  hayvanTurFilter:number=0
+  hayvanTurs:HayvanTur[]=[];
+  kafesNoFilter:number=0
+  kafesNos:KafesNo[]=[];
   constructor(
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
     private hayvanKayitService: HayvanKayitService,
     private vatandasBilgiService:VatandasBilgiService,
     private belediyeBilgiService:BelediyeBilgiService,
+    private hayvanTurService:HayvanTurService,
+    private kafesNoService:KafesNoService,
     private router:Router
   ) {}
 
@@ -37,6 +47,8 @@ export class HayvanKayitAddComponent implements OnInit {
     this.createHayvanKayitAddForm();
     this.getAllVatandasBilgi();
     this.getAllBelediyeBilgi();
+    this.getAllKafesNo();
+    this.getAllHayvanTur();
   }
   createHayvanKayitAddForm() {
     this.hayvanKayitAddForm = this.formBuilder.group({
@@ -100,6 +112,26 @@ export class HayvanKayitAddComponent implements OnInit {
     this.belediyeBilgiService.getBelediyeBilgis().subscribe((response) => {
       this.belediyeBilgis = response.data;
       console.log(this.belediyeBilgis);
+    });
+  }
+  getSelectedHayvanTur(id: number){
+    if(this.hayvanTurFilter==id) return true;
+    else return false; 
+  }
+  getAllHayvanTur() {
+    this.hayvanTurService.getHayvanTurs().subscribe((response) => {
+      this.hayvanTurs = response.data;
+      console.log(this.hayvanTurs);
+    });
+  }
+  getSelectedKafesNo(id: number){
+    if(this.kafesNoFilter==id) return true;
+    else return false; 
+  }
+  getAllKafesNo() {
+    this.kafesNoService.getKafesNos().subscribe((response) => {
+      this.kafesNos = response.data;
+      console.log(this.kafesNos);
     });
   }
 }

@@ -1,0 +1,45 @@
+<div *ngIf="currentHayvanTur && hayvanTurUpdateForm">
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex justify-content-between">
+                <h5>{{currentHayvanTur.hayvanTurAd}} Güncelle</h5>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="mb-3 row">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end">ID:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-control text-center" [placeholder]="currentHayvanTur.id" disabled />
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <strong class="float-end"><label for="hayvanTurAd">Hayvan Türü Adı:</label></strong>
+                        </div>
+                        <div class="col-md-8">
+                            <form [formGroup]="hayvanTurUpdateForm">
+                                <div class="align-items-center">
+                                    <input type="text" id="hayvanTurAd" formControlName="hayvanTurAd" class="form-control"
+                                        [placeholder]="currentHayvanTur.hayvanTurAd" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="card-footer mt-1">
+            <div class="d-flex justify-content-end">
+                <button (click)="update()" type="button" class="btn btn-fill btn-primary">Güncelle</button>
+                <button (click)="closeUpdateModal()" type="button" class="btn btn-danger">İptal</button>
+            </div>
+        </div>
+    </div>
+</div>

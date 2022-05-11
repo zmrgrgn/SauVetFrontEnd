@@ -73,4 +73,14 @@ export class FormService {
       tcNo: ['', Validators.required]
     })
   }
+  createHayvanTurForm():FormGroup{
+    return this.formBuilder.group({
+      hayvanTurAd: ['', Validators.required]
+    })
+  }
+  createKafesNoForm():FormGroup{
+    return this.formBuilder.group({
+      kafesAdi: ['', Validators.required]
+    })
+  }
 }

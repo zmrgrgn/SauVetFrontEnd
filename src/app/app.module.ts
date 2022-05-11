@@ -46,6 +46,14 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { LayoutComponent } from './components/layout/layout.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
+import { HayvanTurComponent } from './components/hayvan-tur/hayvan-tur.component';
+import { HayvanTurAddComponent } from './components/hayvan-tur-add/hayvan-tur-add.component';
+import { HayvanTurDeleteComponent } from './components/hayvan-tur-delete/hayvan-tur-delete.component';
+import { HayvanTurUpdateComponent } from './components/hayvan-tur-update/hayvan-tur-update.component';
+import { KafesNoComponent } from './components/kafes-no/kafes-no.component';
+import { KafesNoAddComponent } from './components/kafes-no-add/kafes-no-add.component';
+import { KafesNoUpdateComponent } from './components/kafes-no-update/kafes-no-update.component';
+import { KafesNoDeleteComponent } from './components/kafes-no-delete/kafes-no-delete.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,6 +92,14 @@ import { HomeComponent } from './components/home/home.component';
     LayoutComponent,
     RegisterComponent,
     HomeComponent,
+    HayvanTurComponent,
+    HayvanTurAddComponent,
+    HayvanTurDeleteComponent,
+    HayvanTurUpdateComponent,
+    KafesNoComponent,
+    KafesNoAddComponent,
+    KafesNoUpdateComponent,
+    KafesNoDeleteComponent,
   ],
   imports: [
     BrowserModule,

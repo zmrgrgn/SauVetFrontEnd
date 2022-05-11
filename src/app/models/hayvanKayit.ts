@@ -2,11 +2,11 @@ export interface HayvanKayit{
     id:string;
     vatandasId:number;
     belediyeId:number;
-    kafesNo:string;
+    kafesNo:number;
     cipNo:string;
     kulakNo:string;
     ad:string;
-    hayvanTur:string;
+    hayvanTur:number;
     irk:string;
     yas:string;
     cinsiyet:string;

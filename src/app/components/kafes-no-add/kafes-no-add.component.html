@@ -1,0 +1,31 @@
+<div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+      <div class="layout-page">
+        <div class="content-wrapper">
+          <div class="container-xxl flex-grow-1 container-p-y">
+            <h4 class="fw-bold py-3 mb-4">Kafes Numara Bilgileri</h4>
+            <div class="row">
+              <div class="col-xl-12">
+                <div class="card mb-8">
+                  <div class="card-body">
+                    <form [formGroup]="kafesNoAddForm">
+                      <div class="mb-3 row">
+                        <label for="kafesAdi" class="col-md-2 col-form-label">Kafes Numarası</label>
+                        <div class="col-md-10">
+                          <input class="form-control" type="text" value="Sneat" id="kafesAdi"
+                            formControlName="kafesAdi" />
+                        </div>
+                      </div>
+                    </form>
+                    <div class="card-footer">
+                      <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
