@@ -6,6 +6,11 @@
                     <div *ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
+                    <div class="mb-3">
+                        <label for="filterText" class="form-label">Hayvan Id'sine Göre Ara</label>
+                        <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText"
+                            placeholder="arama ifadesi giriniz">
+                    </div>
                     <h4 class="fw-bold py-3 mb-4"> Tedaviler
                     </h4>
                     <div class="card">
@@ -15,17 +20,15 @@
                                     <tr>
                                         <th>Id</th>
                                         <th>Hayvan Id</th>
-                                        <th>Hekim Id</th>
                                         <th>Tedavi Başlığı</th>
                                         <th>Tarih</th>
                                     </tr>
                                 </thead>
                                 <tbody class="table-border-bottom-0">
-                                    <tr *ngFor="let hayvanTedavi of hayvanTedavis">
+                                    <tr *ngFor="let hayvanTedavi of hayvanTedavis| hayvanKayit:filterText">
                                         <td><i class="fab fa-angular fa-lg text-danger me-3"></i> {{hayvanTedavi.id}}
                                         </td>
                                         <td>{{hayvanTedavi.hayvanId}}</td>
-                                        <td>{{hayvanTedavi.hekimId}}</td>
                                         <td>{{hayvanTedavi.tedaviBaslik}}</td>
                                         <td>{{hayvanTedavi.tedaviTarih}}</td>
                                         <td>

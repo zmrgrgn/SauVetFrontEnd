@@ -36,7 +36,6 @@ export class FormService {
   createHayvanTedaviForm():FormGroup{
     return this.formBuilder.group({
       hayvanId: ['', Validators.required],
-      hekimId: ['', Validators.required],
       tedaviBaslik: ['', Validators.required],
       tedaviDetay: ['', Validators.required],
       tedaviTarih: ['', Validators.required],
@@ -44,16 +43,6 @@ export class FormService {
       notlar: ['', Validators.required],
       olduMu: ['', Validators.required],
       olumNedeni: ['', Validators.required]
-    })
-  }
-  createHekimForm():FormGroup{
-    return this.formBuilder.group({
-      ad: ['', Validators.required],
-      soyad: ['', Validators.required],
-      telNo: ['', Validators.required],
-      gorev: ['', Validators.required],
-      tcNo: ['', Validators.required],
-      sicilNo: ['', Validators.required]
     })
   }
   createMamaForm():FormGroup{

@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 import { BelediyeBilgi } from 'src/app/models/belediyeBilgi';
 import { HayvanTur } from 'src/app/models/hayvanTur';
 import { KafesNo } from 'src/app/models/kafesNo';
+import { UploadFile } from 'src/app/models/uploadFile';
 import { VatandasBilgi } from 'src/app/models/vatandasBilgi';
 import { BelediyeBilgiService } from 'src/app/services/belediye-bilgi.service';
 import { HayvanKayitService } from 'src/app/services/hayvan-kayit.service';
@@ -32,6 +33,9 @@ export class HayvanKayitAddComponent implements OnInit {
   hayvanTurs:HayvanTur[]=[];
   kafesNoFilter:number=0
   kafesNos:KafesNo[]=[];
+
+  animalImagesFiles: UploadFile[] = [];
+  animalImagesPaths: any[] = []
   constructor(
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
@@ -53,8 +57,8 @@ export class HayvanKayitAddComponent implements OnInit {
   createHayvanKayitAddForm() {
     this.hayvanKayitAddForm = this.formBuilder.group({
       id: ['', Validators.required],
-      vatandasId: ['', Validators.required],
-      belediyeId: ['', Validators.required],
+      vatandasId: [''],
+      belediyeId: [''],
       kafesNo: ['', Validators.required],
       cipNo: ['', Validators.required],
       kulakNo: ['', Validators.required],
@@ -68,7 +72,6 @@ export class HayvanKayitAddComponent implements OnInit {
       geldigiTarih: ['', Validators.required],
       geldigiAdres: ['', Validators.required],
       anamnez: ['', Validators.required],
-      fotograf: ['', Validators.required],
     });
   }
   add() {

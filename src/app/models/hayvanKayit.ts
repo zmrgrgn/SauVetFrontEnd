@@ -15,5 +15,4 @@ export interface HayvanKayit{
     geldigiTarih:string;
     geldigiAdres:string;
     anamnez:string;
-    fotograf:string;
 }

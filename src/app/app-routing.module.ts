@@ -10,14 +10,13 @@ import { HayvanTedaviAddComponent } from './components/hayvan-tedavi-add/hayvan-
 import { HayvanTedaviComponent } from './components/hayvan-tedavi/hayvan-tedavi.component';
 import { HayvanTurAddComponent } from './components/hayvan-tur-add/hayvan-tur-add.component';
 import { HayvanTurComponent } from './components/hayvan-tur/hayvan-tur.component';
-import { HekimAddComponent } from './components/hekim-add/hekim-add.component';
-import { HekimComponent } from './components/hekim/hekim.component';
 import { HomeComponent } from './components/home/home.component';
 import { KafesNoAddComponent } from './components/kafes-no-add/kafes-no-add.component';
 import { KafesNoComponent } from './components/kafes-no/kafes-no.component';
 import { LoginComponent } from './components/login/login.component';
 import { MamaAddComponent } from './components/mama-add/mama-add.component';
 import { MamaComponent } from './components/mama/mama.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { VatandasBilgiAddComponent } from './components/vatandas-bilgi-add/vatandas-bilgi-add.component';
 import { VatandasBilgiComponent } from './components/vatandas-bilgi/vatandas-bilgi.component';
@@ -77,18 +76,6 @@ const routes: Routes = [
     component: KafesNoAddComponent,
     canActivate: [LoginGuard],
   },
-
-  {
-    path: 'hekims/getall',
-    component: HekimComponent,
-    canActivate: [LoginGuard],
-  },
-  {
-    path: 'hekims/add',
-    component: HekimAddComponent,
-    canActivate: [LoginGuard],
-  },
-
   {
     path: 'vatandasBilgis/getall',
     component: VatandasBilgiComponent,
@@ -108,6 +95,11 @@ const routes: Routes = [
   {
     path: 'hayvanSahiplendirmes/add',
     component: HayvanSahiplendirmeAddComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
     canActivate: [LoginGuard],
   },
 

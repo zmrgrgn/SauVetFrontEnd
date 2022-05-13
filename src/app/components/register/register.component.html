@@ -70,19 +70,35 @@
 
             <form [formGroup]="registerForm" id="formAuthentication" class="mb-3" >
                 <div class="mb-3">
-                    <label for="firstName" class="form-label">Ad</label>
+                    <label for="firstName" class="form-label">Ad*</label>
                     <input formControlName="firstName" type="text" class="form-control" id="firstName" name="firstName" placeholder="Adınızı Giriniz" />
                   </div>
                   <div class="mb-3">
-                    <label for="lastName" class="form-label">Soyad</label>
+                    <label for="lastName" class="form-label">Soyad*</label>
                     <input formControlName="lastName" type="text" class="form-control" id="lastName" name="lastName" placeholder="Soyadınızı Giriniz" />
                   </div>
               <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
+                <label for="email" class="form-label">Email*</label>
                 <input formControlName="email" type="text" class="form-control" id="email" name="email" placeholder="Mailinizi Giriniz" />
               </div>
+              <div class="mb-3">
+                <label for="telNo" class="form-label">Telefon Numarası</label>
+                <input formControlName="telNo" type="text" class="form-control" id="telNo" name="telNo" placeholder="Telefon Numaranızı Giriniz" />
+              </div>
+              <div class="mb-3">
+                <label for="gorev" class="form-label">Görev</label>
+                <input formControlName="gorev" type="text" class="form-control" id="gorev" name="gorev" placeholder="Görevinizi Giriniz" />
+              </div>
+              <div class="mb-3">
+                <label for="tcNo" class="form-label">TC Kimlik Numarası</label>
+                <input formControlName="tcNo" type="text" class="form-control" id="tcNo" name="tcNo" placeholder="TC Kimlik Numaranızı Giriniz" />
+              </div>
+              <div class="mb-3">
+                <label for="sicilNo" class="form-label">Sicil Numarası</label>
+                <input formControlName="sicilNo" type="text" class="form-control" id="sicilNo" name="sicilNo" placeholder="Sicil Numaranızı Giriniz" />
+              </div>
               <div class="mb-3 form-password-toggle">
-                <label class="form-label" for="password">Parola</label>
+                <label class="form-label" for="password">Parola*</label>
                 <div class="input-group input-group-merge">
                   <input
                   formControlName="password"
@@ -97,7 +113,7 @@
                 </div>
               </div>
               <div class="mb-3 form-password-toggle">
-                <label class="form-label" for="confirmPassword">Tekrar Parola</label>
+                <label class="form-label" for="confirmPassword">Tekrar Parola*</label>
                 <div class="input-group input-group-merge">
                   <input
                   formControlName="confirmPassword"

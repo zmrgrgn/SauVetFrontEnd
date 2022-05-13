@@ -10,10 +10,10 @@
                 <div class="card-body">
                   <form [formGroup]="hayvanSahiplendirmeAddForm">
                     <div class="mb-3 row">
-                      <label for="hayvanId" class="col-md-2 col-form-label">Hayvan Id</label>
+                      <label for="hayvanId" class="col-md-2 col-form-label">Hayvan Id*</label>
                       <div class="col-md-10">
                         <select [(ngModel)]="hayvanKayitFilter" class="form-select" aria-label="Default select example" id="hayvanId" formControlName="hayvanId">
-                          <option value=0>Kişi Seçiniz</option>
+                          <option value=0>Hayvan Seçiniz</option>
                           <option *ngFor="let hayvanKayit of hayvanKayits" [value]="hayvanKayit.id" [selected]="getSelectedHayvanKayit(hayvanKayit.id)" 
                           >{{hayvanKayit.ad}}</option>
                         </select>
@@ -40,7 +40,7 @@
                     </div>
                     </div>
                     <div class="mb-3 row">
-                      <label for="tarih" class="col-md-2 col-form-label">Tarih</label>
+                      <label for="tarih" class="col-md-2 col-form-label">Tarih*</label>
                       <div class="col-md-10">
                         <input class="form-control" type="date" value="2021-06-18" id="tarih" formControlName="tarih" />
                       </div>

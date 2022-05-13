@@ -47,8 +47,8 @@ export class HayvanSahiplendirmeAddComponent implements OnInit {
   createHayvanSahiplendirmeAddForm() {
     this.hayvanSahiplendirmeAddForm = this.formBuilder.group({
       hayvanId: ['', Validators.required],
-      vatandasId: ['', Validators.required],
-      belediyeId: ['', Validators.required],
+      vatandasId: [''],
+      belediyeId: [''],
       tarih: ['', Validators.required],
     });
   }

@@ -10,48 +10,38 @@
                 <div class="card-body">
                   <form [formGroup]="hayvanTedaviAddForm">
                     <div class="mb-3 row">
-                      <label for="hayvanId" class="col-md-2 col-form-label">Hayvan Id</label>
+                      <label for="hayvanId" class="col-md-2 col-form-label">Hayvan Id*</label>
                       <div class="col-md-10">
                         <select [(ngModel)]="hayvanKayitFilter" class="form-select" aria-label="Default select example" id="hayvanId" formControlName="hayvanId">
-                          <option value=0>Kişi Seçiniz</option>
+                          <option value=0>Hayvan Seçiniz</option>
                           <option *ngFor="let hayvanKayit of hayvanKayits" [value]="hayvanKayit.id" [selected]="getSelectedHayvanKayit(hayvanKayit.id)" 
                           >{{hayvanKayit.ad}}</option>
                         </select>
                       </div>
                     </div>
                     <div class="mb-3 row">
-                      <label for="hekimId" class="col-md-2 col-form-label">Hekim Id</label>
-                      <div class="col-md-10">
-                        <select [(ngModel)]="hekimFilter" class="form-select" aria-label="Default select example" id="hekimId" formControlName="hekimId">
-                          <option value=0>Kişi Seçiniz</option>
-                          <option *ngFor="let hekim of hekims" [value]="hekim.id" [selected]="getSelectedHekim(hekim.id)" 
-                          >{{hekim.ad}}</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="mb-3 row">
-                      <label for="tedaviBaslik" class="col-md-2 col-form-label">Tedavi Başlığı</label>
+                      <label for="tedaviBaslik" class="col-md-2 col-form-label">Tedavi Başlığı*</label>
                       <div class="col-md-10">
                         <input class="form-control" type="text" value="Sneat" id="tedaviBaslik"
                           formControlName="tedaviBaslik" />
                       </div>
                     </div>
                     <div class="mb-3 row">
-                      <label for="tedaviDetay" class="col-md-2 col-form-label">Tedavi Detayı</label>
+                      <label for="tedaviDetay" class="col-md-2 col-form-label">Tedavi Detayı*</label>
                       <div class="col-md-10">
                         <input class="form-control" type="text" value="Sneat" id="tedaviDetay"
                           formControlName="tedaviDetay" />
                       </div>
                     </div>
                     <div class="mb-3 row">
-                      <label for="tedaviTarih" class="col-md-2 col-form-label">Tarih</label>
+                      <label for="tedaviTarih" class="col-md-2 col-form-label">Tarih*</label>
                       <div class="col-md-10">
                         <input class="form-control" type="date" value="2021-06-18" id="tedaviTarih"
                           formControlName="tedaviTarih" />
                       </div>
                     </div>
                     <div class="mb-3 row">
-                      <label for="bulgular" class="col-md-2 col-form-label">Bulgular</label>
+                      <label for="bulgular" class="col-md-2 col-form-label">Bulgular*</label>
                       <div class="col-md-10">
                         <input class="form-control" type="text" value="Sneat" id="bulgular"
                           formControlName="bulgular" />

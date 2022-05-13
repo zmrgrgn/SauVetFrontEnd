@@ -32,7 +32,11 @@ export class RegisterComponent implements OnInit {
       lastName: ["", [Validators.required]],
       email: ["", [Validators.required, Validators.email]],
       password: ["", [Validators.required]],
-      confirmPassword: ["", [Validators.required]]
+      confirmPassword: ["", [Validators.required]],
+      telNo:[""],
+      gorev:[""],
+      tcNo:[""],
+      sicilNo:[""]
     }, {
       validator: ConfirmedValidator('password', 'confirmPassword')
     })
@@ -43,7 +47,7 @@ export class RegisterComponent implements OnInit {
       let newUser = Object.assign({}, this.registerForm.value);
       delete newUser["confirmPassword"]
       this.authService.register(newUser).subscribe(successResponse => {
-        this.router.navigateByUrl('/hayvanKayits/getall')
+        this.router.navigateByUrl('/login')
         this.toastrService.success("İşlem başarılı", "Giriş yapıldı");
         this.localStorageService.add("token", successResponse.data.token);
         this.authService.isLoggedIn = true;
